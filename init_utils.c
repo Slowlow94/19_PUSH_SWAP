@@ -6,14 +6,14 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:50:15 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/07 16:14:30 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/09 14:04:40 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-int	is_num(char *str)
+int	is_num(char *str) // n'est pas correct
 {
 	while (*str)
 	{
@@ -24,20 +24,14 @@ int	is_num(char *str)
 	}
 	return (0);
 }
-int is_integer(int nb)
-{
-	if (nb < INT_MIN || nb > INT_MAX)
-		return (1);
-	return (0);
-}
 
 int	is_dubble(t_list *head_a, int value)
 {
 	while (head_a != NULL)
 	{
-		if (value == *(int *)head_a->content)
+		if (value == *(int *)head_a->c)
 		{
-			ft_printf("content : %d\n", *head_a->content);
+			ft_printf("content : %d\n", *head_a->c);
 			return (1);
 		}
 		head_a = head_a->next;
@@ -45,7 +39,7 @@ int	is_dubble(t_list *head_a, int value)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long long	res;
 	int			sign;
@@ -67,5 +61,5 @@ int	ft_atoi(const char *str)
 		res = res * 10 + *s - 48;
 		s++;
 	}
-	return (res * sign);
+	return (sign * res);
 }

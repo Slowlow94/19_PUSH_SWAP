@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:14:37 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/08 18:42:33 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/09 11:56:46 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ void	swap(t_list **head)
 	t_list *first;
 	t_list *second;
 	// t_ps data;
-
-	// data->a.stacklist->content = 0;
+	// data->a.stacklist->cnt = 0;
 	first = NULL;
 	second = NULL;
 	if (*head == NULL || (*head)->next == NULL)

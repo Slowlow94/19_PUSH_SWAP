@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:46:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/08 18:45:45 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/09 17:03:49 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_list	*ft_lstnew(int *content)
 	node = malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
-	node->content = content;
+	node->c = content;
 	node->next = NULL;
 	return (node);
 }
@@ -67,4 +67,21 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 	}
 	return (lenght);
+}
+
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*temp;
+
+	temp = NULL;
+	if (!lst)
+		return ;
+	while (*lst != NULL)
+	{
+		temp = *lst;
+		*lst = (*lst)->next;
+		free(temp->c);
+		free(temp);
+	}
+	*lst = NULL;
 }
