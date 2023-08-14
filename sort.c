@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/09 17:32:36 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/14 22:05:21 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void	wich_sort(t_list **head_a, t_list **head_b)
 		sort_3(head_a);
 	else if (size > 3 && size <= 5)
 		sort_5(head_a, head_b);
-	// else
-	// 	sort(head_a, head_b);
+	else
+		sort(head_a, head_b);
 }
 
 void	sort_3(t_list **head_a)
@@ -55,7 +55,7 @@ void	sort_3(t_list **head_a)
 
 int	is_min_on_top(t_list **head_a)
 {
-	int min;
+	int  min;
 	t_list *first;
 
 	first = NULL;
@@ -63,12 +63,9 @@ int	is_min_on_top(t_list **head_a)
 	min = *(*head_a)->c;
 	while (first != NULL)
 	{
-		first = first->next;
 		if (min > *first->c)
-		{
-			ft_printf("Min : %d et contenu noeud actuel : %d\n", min, *(int *)first->c);
 			return (1);
-		}
+		first = first->next;
 	}
 	return (0);
 }
@@ -84,11 +81,8 @@ int	is_min_on_bottom(t_list **head_a)
 	last = ft_lstlast(*head_a, 0);
 	while (first != NULL)
 	{
-		if (first->c < last->c)
-		{
-			ft_printf("Last : %d\n", *(int *)last->c);
+		if (first->c > last->c)
 			return (1);
-		}
 		first = first->next;
 	}
 	return (0);
@@ -108,11 +102,13 @@ void	sort_5(t_list **head_a, t_list **head_b)
 		else
 			top_to_bottom(head_a);
 	}
-	if (ft_lstsize(*head_a) == 3)
-		sort_3(head_a);
+	sort_3(head_a);
+	while ((*head_b != NULL))
+	{
+		if (is_min_on_top(head_b) == 0 && (*head_b)->next != NULL)
+			top_to_bottom(head_b);
+		else
+			top_to_top(head_b, head_a);
+	}
 }
 
-// void	sort(t_list **head_a, t_list **head_b)
-// {
-
-// }

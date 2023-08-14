@@ -7,7 +7,8 @@ SRCS	= init.c \
 		  printf_stack_a.c \
 		  actions.c \
 		  actions_both.c \
-		  sort.c
+		  sort.c \
+		  sort_big.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
 CC		= gcc

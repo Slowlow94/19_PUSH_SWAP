@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/09 16:20:52 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/14 22:02:58 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	top_to_top(t_list **head_1, t_list **head_2);
 void	wich_sort(t_list **head_a, t_list **head_b);
 void	sort_3(t_list **head_a);
 void	sort_5(t_list **head_a, t_list **head_b);
+int		is_min_on_bottom(t_list **head_a);
+int		is_min_on_top(t_list **head_a);
 void	sort(t_list **head_a, t_list **head_b);
 
 // ERRORS //
