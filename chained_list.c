@@ -6,14 +6,14 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:46:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/09 17:03:49 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/15 18:49:38 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-t_list	*ft_lstnew(int *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*node;
 
@@ -80,7 +80,7 @@ void	ft_lstclear(t_list **lst)
 	{
 		temp = *lst;
 		*lst = (*lst)->next;
-		free(temp->c);
+		// free(temp->c);
 		free(temp);
 	}
 	*lst = NULL;

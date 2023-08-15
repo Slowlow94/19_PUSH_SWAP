@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 16:17:42 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/09 17:06:06 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/15 11:00:33 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_print_stack_a(t_list **head_a)
 	i = 0;
 	while (first)
 	{
-		ft_printf("Position %d : [%d]\n", i, *(int *)(first)->c);
+		ft_printf("Position %d : [%d]\n", i, (first)->c);
 		first = first->next;
 		i++;
 	}

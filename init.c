@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/09 17:12:18 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/15 18:50:50 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,12 @@ int	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
 
 int	fill_linkchain(t_list **head_a, char **argv, int i)
 {
-	int *cnt;
+	int cnt;
 	t_list *new_node;
 
-	cnt = NULL;
-	cnt = malloc(sizeof(int));
-	if (!cnt)
-		return (0);
-	*cnt = ft_atoi(argv[i]);
-	if (is_dubble(*head_a, *cnt) == 1)
-	{
-		free(cnt);
+	cnt = ft_atoi(argv[i]);
+	if (is_dubble(*head_a, cnt) == 1)
 		return (ft_error());
-	}
 	if (i == 1)
 		*head_a = ft_lstnew(cnt);
 	else

@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:50:15 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/09 14:04:40 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/15 10:54:09 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,8 @@ int	is_dubble(t_list *head_a, int value)
 {
 	while (head_a != NULL)
 	{
-		if (value == *(int *)head_a->c)
-		{
-			ft_printf("content : %d\n", *head_a->c);
+		if (value == head_a->c)
 			return (1);
-		}
 		head_a = head_a->next;
 	}
 	return (0);

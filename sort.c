@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/14 22:05:21 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/15 14:35:59 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	wich_sort(t_list **head_a, t_list **head_b)
 	else if (size > 3 && size <= 5)
 		sort_5(head_a, head_b);
 	else
-		sort(head_a, head_b);
+		sort_big(head_a, head_b);
 }
 
 void	sort_3(t_list **head_a)
@@ -35,21 +35,21 @@ void	sort_3(t_list **head_a)
 	t = *head_a;
 	m = (*head_a)->next;
 	b = ft_lstlast(*head_a, 0);
-	if ((*(t->c) > *(m->c)) && (*(t->c) < *(b->c)) && (*(m->c) < *(b->c)))
+	if ((t->c > m->c) && (t->c < b->c) && (m->c < b->c))
 		swap(head_a);
-	if ((*(t->c) > *(m->c)) && (*(m->c) > *(b->c)) && (*(b->c) < *(t->c)))
+	if ((t->c > m->c) && (m->c > b->c) && (b->c < t->c))
 	{
 		top_to_bottom(head_a);
 		swap(head_a);
 	}
-	if ((*(t->c) > *(m->c) && *(m->c) < *(b->c) && *(b->c) < *(t->c)))
+	if ((t->c > m->c) && (m->c < b->c) && (b->c < t->c))
 		top_to_bottom(head_a);
-	if ((*(t->c) < *(m->c)) && (*(m->c) > *(b->c)) && (*(b->c) > *(t->c)))
+	if ((t->c < m->c) && (m->c > b->c) && (b->c > t->c))
 	{
 		bottom_to_top(head_a);
 		swap(head_a);
 	}
-	if ((*(t->c) < *(m->c)) && (*(m->c) > *(t->c)) && (*(b->c) < *(t->c)))
+	if ((t->c < m->c) && (m->c > t->c) && (b->c < t->c))
 		bottom_to_top(head_a);
 }
 
@@ -60,10 +60,10 @@ int	is_min_on_top(t_list **head_a)
 
 	first = NULL;
 	first = *head_a;
-	min = *(*head_a)->c;
+	min = (*head_a)->c;
 	while (first != NULL)
 	{
-		if (min > *first->c)
+		if (min > first->c)
 			return (1);
 		first = first->next;
 	}
@@ -81,7 +81,7 @@ int	is_min_on_bottom(t_list **head_a)
 	last = ft_lstlast(*head_a, 0);
 	while (first != NULL)
 	{
-		if (first->c > last->c)
+		if (first->c < last->c)
 			return (1);
 		first = first->next;
 	}
