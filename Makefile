@@ -8,7 +8,8 @@ SRCS	= init.c \
 		  actions.c \
 		  actions_both.c \
 		  sort.c \
-		  sort_big.c
+		  sort_big.c \
+		  setting_nodes_utils.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
 CC		= gcc

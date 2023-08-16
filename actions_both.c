@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   action_both.c                                      :+:      :+:    :+:   */
+/*   actions_both.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:40:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/08 18:41:38 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/16 18:06:17 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 void	swap_both(t_list **head_a, t_list **head_b)
 {
-	swap(head_a);
-	swap(head_b);
+	swap_a(head_a);
+	swap_b(head_b);
 	// swap(data->head_A);
 	// swap(data->head_B);
 }
 
 void	bottom_to_top_both(t_list **head_a, t_list **head_b)
 {
-	bottom_to_top(head_a);
-	bottom_to_top(head_b);
+	bottom_to_top_a(head_a);
+	bottom_to_top_b(head_b);
 }
 
 void	top_to_bottom_both(t_list **head_a, t_list **head_b)
 {
-	top_to_bottom(head_a);
-	top_to_bottom(head_b);
+	top_to_bottom_a(head_a);
+	top_to_bottom_b(head_b);
 }

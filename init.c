@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/15 18:50:50 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/16 17:42:07 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ int	main(int argc, char **argv)
 
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);
-	// system("leaks push_swap");
+	system("leaks push_swap");
 }

@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/15 14:35:59 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/16 18:03:53 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,21 @@ void	sort_3(t_list **head_a)
 	m = (*head_a)->next;
 	b = ft_lstlast(*head_a, 0);
 	if ((t->c > m->c) && (t->c < b->c) && (m->c < b->c))
-		swap(head_a);
+		swap_a(head_a);
 	if ((t->c > m->c) && (m->c > b->c) && (b->c < t->c))
 	{
-		top_to_bottom(head_a);
-		swap(head_a);
+		top_to_bottom_a(head_a);
+		swap_a(head_a);
 	}
 	if ((t->c > m->c) && (m->c < b->c) && (b->c < t->c))
-		top_to_bottom(head_a);
+		top_to_bottom_a(head_a);
 	if ((t->c < m->c) && (m->c > b->c) && (b->c > t->c))
 	{
-		bottom_to_top(head_a);
-		swap(head_a);
+		bottom_to_top_a(head_a);
+		swap_a(head_a);
 	}
 	if ((t->c < m->c) && (m->c > t->c) && (b->c < t->c))
-		bottom_to_top(head_a);
+		bottom_to_top_a(head_a);
 }
 
 int	is_min_on_top(t_list **head_a)
@@ -93,22 +93,22 @@ void	sort_5(t_list **head_a, t_list **head_b)
 	while (ft_lstsize(*head_a) > 3)
 	{
 		if (is_min_on_top(head_a) == 0)
-			top_to_top(head_a, head_b);
+			top_a_to_top_b(head_a, head_b);
 		else if (is_min_on_bottom(head_a) == 0)
 		{
-			bottom_to_top(head_a);
-			top_to_top(head_a, head_b);
+			bottom_to_top_a(head_a);
+			top_a_to_top_b(head_a, head_b);
 		}
 		else
-			top_to_bottom(head_a);
+			top_to_bottom_a(head_a);
 	}
 	sort_3(head_a);
 	while ((*head_b != NULL))
 	{
 		if (is_min_on_top(head_b) == 0 && (*head_b)->next != NULL)
-			top_to_bottom(head_b);
+			top_to_bottom_b(head_b);
 		else
-			top_to_top(head_b, head_a);
+			top_b_to_top_a(head_b, head_a);
 	}
 }
 

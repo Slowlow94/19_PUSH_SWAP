@@ -1,0 +1,100 @@
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+-3 est lowcost ? : 1
+-48 est lowcost ? : 0
+100 est lowcost ? : 0
+9 est lowcost ? : 0
+-1 est lowcost ? : 0
+-8 est lowcost ? : 0
+-20 est lowcost ? : 0
+77 est lowcost ? : 0
+10 est lowcost ? : 0
+Stack A
+
+
+Position 0 : [-21]
+Position 1 : [-16]
+Position 2 : [96]
+-----------------------
+Stack B
+
+
+Position 0 : [-3]
+Position 1 : [-48]
+Position 2 : [100]
+Position 3 : [9]
+Position 4 : [-1]
+Position 5 : [-8]
+Position 6 : [-20]
+Position 7 : [77]
+Position 8 : [10]

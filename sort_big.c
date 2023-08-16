@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/15 18:55:43 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/16 18:24:26 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,150 +15,139 @@
 
 void	sort_big(t_list **head_a, t_list **head_b)
 {
+	t_list *b;
+
 	while (ft_lstsize(*head_a) > 3)
-		top_to_top(head_a, head_b);
+		top_a_to_top_b(head_a, head_b);
+	b = NULL;
+	b = *head_b;
 	sort_3(head_a);
-	while(*head_b)
+	while(b)
 	{
-		find_target_node(head_a, head_b);
+		setting_nodes(head_a, head_b);
+		move_nodes(head_a, head_b);
+	}
+}
+
+
+void	setting_nodes(t_list **head_a, t_list **head_b)
+{
+	find_target_node(head_a, head_b);
+	give_position(head_a, head_b);
+	is_above_middle(head_a);
+	is_above_middle(head_b);
+	how_much(head_b, head_a);
+	wich_one_is_lowcost(head_b);
+}
+
+void	move_nodes(t_list **head_a, t_list **head_b)
+{
+	t_list *lowcost;
+
+	lowcost = NULL;
+	lowcost = the_cheapest(head_b);
+	if (lowcost->above_middle && lowcost->target->above_middle)
+		both_above_middle(head_a, head_b, lowcost);
+	else if (lowcost->above_middle && !(lowcost->target->above_middle))
+		low_am_target_below(head_a, head_b, lowcost);
+	else if (!(lowcost->above_middle) && lowcost->target->above_middle)
+		low_below_target_am(head_a, head_b, lowcost);
+	else
+		both_below(head_a, head_b, lowcost);
+	put_stack_in_order(head_b, lowcost, 'b');
+	put_stack_in_order(head_a, lowcost->target, 'a');
+	top_b_to_top_a(head_b, head_a);
+}
+
+void	put_stack_in_order(t_list **head, t_list *become_top, char c)
+{
+	while (*head != become_top)
+	{
+		if (c == 'a')
+		{
+			if (become_top->above_middle)
+				top_to_bottom_a(head);
+			else
+				bottom_to_top_a(head);
+		}
+		else
+		{
+			if (become_top->above_middle)
+				top_to_bottom_b(head);
+			else
+				bottom_to_top_b(head);
+		}
+	}
+}
+
+void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost)
+{
+	while (lowcost->position > 0)
+	{
+		bottom_to_top_b(head_b);
 		give_position(head_a, head_b);
-		is_above_middle(head_a);
-		is_above_middle(head_b);
-		how_much(head_b, head_a);
-		*head_b = (*head_b)->next;
 	}
+	while (lowcost->target->position > 0)
+	{
+		bottom_to_top_a(head_a);
+		give_position(head_a, head_b);
+	}
+	// top_to_top(head_b, head_a);
 }
 
-void	how_much(t_list **head_b, t_list **head_a)
+void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	t_list *b;
-	int	size_a;
-	int	size_b;
-
-	b = NULL;
-	b = *head_b;
-	size_a = ft_lstsize(*head_a);
-	size_b = ft_lstsize(*head_b);
-	while (b)
+	while (lowcost->position > 0)
 	{
-		if (b->above_middle && (b->target)->above_middle)
-		{
-			b->price = b->position + (b->target)->position;
-			ft_printf("1. Nombre et target au dessus : %d, prix : [%d]\n", b->c, b->price);
-		}
-		else if (b->above_middle && !((b->target)->above_middle))
-		{
-			b->price = b->position + (size_a - (b->target)->position);
-			ft_printf("2. Nombre au dessus et target en dessous : %d, prix : [%d]\n", b->c, b->price);
-		}
-		else if (!(b->above_middle) && (b->target)->above_middle)
-		{
-			b->price = (size_b - b->position) + (b->target)->position;
-			ft_printf("3. Nombre en dessous et target au dessus : %d, prix : [%d]\n", b->c, b->price);
-		}
-		else //if (!(b->above_middle) && !(b->target->above_middle))
-		{
-			b->price = (size_b - b->position) + (size_a - (b->target)->position);
-			ft_printf("4. Nombre en dessous et target en dessous : %d, prix : [%d]\n", b->c, b->price);
-		}
-		b = b->next;
+		bottom_to_top_b(head_b);
+		give_position(head_a, head_b);
 	}
-}
-
-void	is_above_middle(t_list **head)
-{
-	int	middle;
-	t_list *stack;
-
-	stack = NULL;
-	stack = *head;
-	middle = ft_lstsize(*head) / 2;
-	while (stack)
+	while (lowcost->target->position > 0)
 	{
-		if (stack->position <= middle)
-			stack->above_middle = true;
+		if(lowcost->position == 1)
+			swap_a(head_a);
 		else
-			stack->above_middle = false;
-		ft_printf("Le nombre %d est %d\n", stack->c, stack->above_middle);
-		stack = stack->next;
+			top_to_bottom_a(head_a);
+		give_position(head_a, head_b);
 	}
+	// top_to_top(head_b, head_a);
 }
 
-void	give_position(t_list **head_a, t_list **head_b)
+void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	int	i;
-	t_list *a;
-	t_list *b;
-
-	a = NULL;
-	b = NULL;
-	a = *head_a;
-	b = *head_b;
-	i = 0;
-	while (a)
+	while (lowcost->position > 0)
 	{
-		a->position = i;
-		i++;
-		a = a->next;
-	}
-	i = 0;
-	while (b)
-	{
-		b->position = i;
-		i++;
-		b = b->next;
-	}
-}
-
-void	find_target_node(t_list **head_a, t_list **head_b)
-{
-	t_list *target_node;
-	t_list *a;
-	t_list *b;
-	int biggest_value;
-
-	a = NULL;
-	b = NULL;
-	b = *head_b;
-	a = *head_a;
-	biggest_value = INT_MAX;
-	target_node = NULL;
-	while (b)
-	{
-		while (a)
-		{
-			if ((a->c > b->c) && a->c < biggest_value)
-			{
-				biggest_value = a->c;
-				target_node = a;
-			}
-			a = a->next;
-		}
-		if (biggest_value == INT_MAX)
-			b->target = find_smallest(head_a, b->c);
+		if(lowcost->position == 1)
+			swap_b(head_b);
 		else
-			b->target = target_node;
-		b = b->next;
+			top_to_bottom_b(head_b);
+		give_position(head_a, head_b);
 	}
+	while (lowcost->target->position > 0)
+	{
+		top_to_bottom_a(head_a);
+		give_position(head_a, head_b);
+	}
+	// top_to_top(head_b, head_a);
 }
 
-t_list *find_smallest(t_list **head_a, int value_b)
+void	both_above_middle(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	int smallest_value;
-	t_list *target_node;
-	t_list *a;
-
-	a = NULL;
-	a = *head_a;
-	smallest_value = value_b;
-	while (a)
+	while (lowcost->position > 0)
 	{
-		if (a->c < value_b && a->c < smallest_value)
-		{
-			smallest_value = a->c;
-			target_node = a;
-		}
-		a = a->next;
+		if(lowcost->position == 1)
+			swap_b(head_b);
+		else
+			top_to_bottom_b(head_b);
+		give_position(head_a, head_b);
 	}
-	return (target_node);
+	while (lowcost->target->position > 0)
+	{
+		if (lowcost->target->position == 1)
+			swap_a(head_a);
+		else
+			top_to_bottom_a(head_a);
+		give_position(head_a, head_b);
+	}
+	// top_to_top(head_b, head_a);
 }
