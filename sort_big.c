@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/16 18:24:26 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/17 16:12:10 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	sort_big(t_list **head_a, t_list **head_b)
 	b = NULL;
 	b = *head_b;
 	sort_3(head_a);
-	while(b)
+	while(*head_b)
 	{
 		setting_nodes(head_a, head_b);
 		move_nodes(head_a, head_b);
@@ -43,7 +43,13 @@ void	setting_nodes(t_list **head_a, t_list **head_b)
 void	move_nodes(t_list **head_a, t_list **head_b)
 {
 	t_list *lowcost;
+	t_list *first;
+	t_list *last;
 
+	first = NULL;
+	last = NULL;
+	last = ft_lstlast(*head_a, 0);
+	first = *head_a;
 	lowcost = NULL;
 	lowcost = the_cheapest(head_b);
 	if (lowcost->above_middle && lowcost->target->above_middle)
@@ -57,6 +63,32 @@ void	move_nodes(t_list **head_a, t_list **head_b)
 	put_stack_in_order(head_b, lowcost, 'b');
 	put_stack_in_order(head_a, lowcost->target, 'a');
 	top_b_to_top_a(head_b, head_a);
+	if (!(first == lowcost->target) && !(last == lowcost->target))
+	{
+		put_stack_in_order(head_a, return_min(head_a), 'a');
+		ft_printf("head_a : %d, target de lowcost : %d\n", (*head_a)->c, lowcost->target->c);
+	}
+}
+
+t_list *return_min(t_list **head_a)
+{
+	t_list *min;
+	t_list *current;
+
+	min = NULL;
+	current = NULL;
+	min = *head_a;
+	current = *head_a;
+	while (current)
+	{
+		if (current->c < min->c)
+		{
+			min = current;
+			// ft_printf("Min in while : %d\n", min->c);
+		}
+		current = current->next;
+	}
+	return (min);
 }
 
 void	put_stack_in_order(t_list **head, t_list *become_top, char c)
@@ -92,7 +124,6 @@ void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 		bottom_to_top_a(head_a);
 		give_position(head_a, head_b);
 	}
-	// top_to_top(head_b, head_a);
 }
 
 void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost)
@@ -104,13 +135,9 @@ void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost)
 	}
 	while (lowcost->target->position > 0)
 	{
-		if(lowcost->position == 1)
-			swap_a(head_a);
-		else
-			top_to_bottom_a(head_a);
+		top_to_bottom_a(head_a);
 		give_position(head_a, head_b);
 	}
-	// top_to_top(head_b, head_a);
 }
 
 void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost)
@@ -125,10 +152,9 @@ void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 	}
 	while (lowcost->target->position > 0)
 	{
-		top_to_bottom_a(head_a);
+		bottom_to_top_a(head_a);
 		give_position(head_a, head_b);
 	}
-	// top_to_top(head_b, head_a);
 }
 
 void	both_above_middle(t_list **head_a, t_list **head_b, t_list *lowcost)
@@ -143,11 +169,7 @@ void	both_above_middle(t_list **head_a, t_list **head_b, t_list *lowcost)
 	}
 	while (lowcost->target->position > 0)
 	{
-		if (lowcost->target->position == 1)
-			swap_a(head_a);
-		else
-			top_to_bottom_a(head_a);
+		top_to_bottom_a(head_a);
 		give_position(head_a, head_b);
 	}
-	// top_to_top(head_b, head_a);
 }

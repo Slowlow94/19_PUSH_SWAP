@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/16 17:42:07 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/17 17:38:01 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,21 @@ int	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
 {
 	int	i;
 
-	if (argc <= 2) // pas d'arg ou 1 seul, pas besoin de trier
+	if (argc <= 2)
 	{
-		if (argv[1] && is_num(argv[1]) == 1) // que ce n'est pas un entier
+		if (argv[1] && (!is_num(argv[1])))
 			return (ft_error());
 		return (0);
 	}
 	i = 1;
 	while (argv[i])
 	{
-		if (is_num(argv[i]) == 1)
+		if (!is_num(argv[i]))
 			return (ft_error());
-		else
-		{
-			if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
-				return (ft_error());
-			fill_linkchain(head_a, argv, i);
-			i++;
-		}
+		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
+			return (ft_error());
+		fill_linkchain(head_a, argv, i);
+		i++;
 	}
 	return (0);
 }
@@ -77,5 +74,5 @@ int	main(int argc, char **argv)
 
 	ft_lstclear(&head_a);
 	ft_lstclear(&head_b);
-	system("leaks push_swap");
+	// system("leaks push_swap");
 }

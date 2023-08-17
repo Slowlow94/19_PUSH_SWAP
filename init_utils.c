@@ -6,23 +6,28 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:50:15 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/15 10:54:09 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/17 17:35:45 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-int	is_num(char *str) // n'est pas correct
+int	is_num(char *str)
 {
-	while (*str)
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		if ((*str >= '0' && *str <= '9') || *str == '-' || *str == '+')
-			str++;
-		else
-			return (1);
+		if (str[i] == '+' || str[i] == '-')
+			i++;
+		while (str[i] >= '0' && str[i] <= '9')
+			i++;
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 int	is_dubble(t_list *head_a, int value)

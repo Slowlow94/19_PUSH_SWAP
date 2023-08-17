@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/16 18:18:17 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/17 17:17:16 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	put_stack_in_order(t_list **head, t_list *become_top, char c);
+t_list	*return_min(t_list **head_a);
 
 // ERRORS //
 int		ft_error(void);

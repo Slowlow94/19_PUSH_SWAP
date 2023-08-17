@@ -1,100 +1,79 @@
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
--3 est lowcost ? : 1
--48 est lowcost ? : 0
-100 est lowcost ? : 0
-9 est lowcost ? : 0
--1 est lowcost ? : 0
--8 est lowcost ? : 0
--20 est lowcost ? : 0
-77 est lowcost ? : 0
-10 est lowcost ? : 0
+Error
+top_a_to_top_b
+top_a_to_top_b
+top_a_to_top_b
+top_a_to_top_b
+top_a_to_top_b
+top_a_to_top_b
+top_a_to_top_b
+top_a_to_top_b
+top_to_bottom_a
+swap_a
+top_to_bottom_a
+top_b_to_top_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+head_a : -5, target de lowcost : 456
+top_to_bottom_a
+top_b_to_top_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+head_a : -5, target de lowcost : 32
+top_to_bottom_a
+top_b_to_top_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+head_a : -5, target de lowcost : 8
+top_to_bottom_a
+top_b_to_top_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+head_a : -5, target de lowcost : 0
+top_b_to_top_a
+top_b_to_top_a
+bottom_to_top_a
+bottom_to_top_a
+top_b_to_top_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+head_a : -20, target de lowcost : 456
+bottom_to_top_a
+bottom_to_top_a
+bottom_to_top_a
+bottom_to_top_a
+top_b_to_top_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+top_to_bottom_a
+head_a : -20, target de lowcost : 32
 Stack A
 
 
-Position 0 : [-21]
-Position 1 : [-16]
-Position 2 : [96]
+Position 0 : [-20]
+Position 1 : [-8]
+Position 2 : [-5]
+Position 3 : [-1]
+Position 4 : [0]
+Position 5 : [8]
+Position 6 : [10]
+Position 7 : [32]
+Position 8 : [77]
+Position 9 : [456]
+Position 10 : [963]
 -----------------------
 Stack B
 
 
-Position 0 : [-3]
-Position 1 : [-48]
-Position 2 : [100]
-Position 3 : [9]
-Position 4 : [-1]
-Position 5 : [-8]
-Position 6 : [-20]
-Position 7 : [77]
-Position 8 : [10]

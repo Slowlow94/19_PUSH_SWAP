@@ -12,7 +12,7 @@ SRCS	= init.c \
 		  setting_nodes_utils.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
-CC		= gcc
+CC		= gcc -fsanitize=address
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 
