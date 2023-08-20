@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/17 16:39:33 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/20 17:24:34 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	wich_sort(t_list **head_a, t_list **head_b)
 	int size;
 
 	size = ft_lstsize(*head_a);
-	if (size == 3)
+	if (size == 0)
+		return ;
+	else if (size == 3)
 		sort_3(head_a);
 	else if (size > 3 && size <= 5)
 		sort_5(head_a, head_b);

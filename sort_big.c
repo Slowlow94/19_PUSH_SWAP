@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/17 16:12:10 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/20 16:36:48 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,8 @@
 
 void	sort_big(t_list **head_a, t_list **head_b)
 {
-	t_list *b;
-
 	while (ft_lstsize(*head_a) > 3)
 		top_a_to_top_b(head_a, head_b);
-	b = NULL;
-	b = *head_b;
 	sort_3(head_a);
 	while(*head_b)
 	{

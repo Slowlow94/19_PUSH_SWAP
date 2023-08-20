@@ -3,53 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/17 17:38:01 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/20 17:24:10 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-int	ft_error(void)
+void	ft_error(void)
 {
 	ft_printf("Error\n");
-	return (0);
+	return ;
 }
 
-int	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
+void	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
 {
 	int	i;
 
 	if (argc <= 2)
 	{
-		if (argv[1] && (!is_num(argv[1])))
-			return (ft_error());
-		return (0);
+		if (argc <= 2 && (!is_num(argv[1])))
+			ft_error();
+		else
+			return ;
 	}
 	i = 1;
 	while (argv[i])
 	{
 		if (!is_num(argv[i]))
-			return (ft_error());
+			ft_error();
 		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
-			return (ft_error());
+			ft_error();
 		fill_linkchain(head_a, argv, i);
 		i++;
 	}
-	return (0);
 }
 
-int	fill_linkchain(t_list **head_a, char **argv, int i)
+void	fill_linkchain(t_list **head_a, char **argv, int i)
 {
 	int cnt;
 	t_list *new_node;
 
 	cnt = ft_atoi(argv[i]);
-	if (is_dubble(*head_a, cnt) == 1)
-		return (ft_error());
+	if (is_dubble(head_a, cnt) == 0)
+	{
+		ft_printf("ca passe");
+		ft_error();
+	}
 	if (i == 1)
 		*head_a = ft_lstnew(cnt);
 	else
@@ -57,7 +60,6 @@ int	fill_linkchain(t_list **head_a, char **argv, int i)
 		new_node = ft_lstnew(cnt);	
 		ft_lstadd_back(head_a, new_node);
 	}
-	return (0);
 }
 
 int	main(int argc, char **argv)

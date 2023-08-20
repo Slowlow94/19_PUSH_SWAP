@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:50:15 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/17 17:35:45 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/20 17:22:56 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,19 @@ int	is_num(char *str)
 	return (1);
 }
 
-int	is_dubble(t_list *head_a, int value)
+int	is_dubble(t_list **head_a, int value)
 {
-	while (head_a != NULL)
+	t_list *first;
+
+	first = NULL;
+	first = *head_a;
+	while (first != NULL)
 	{
-		if (value == head_a->c)
-			return (1);
-		head_a = head_a->next;
+		if (value == first->c)
+			return (0);
+		first = first->next;
 	}
-	return (0);
+	return (1);
 }
 
 long	ft_atoi(const char *str)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/17 17:17:16 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/20 17:22:52 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ typedef struct	s_list
 	struct s_list	*target;
 }					t_list;
 
-int			ft_print_stack_a(t_list **head_a); // pour tester la stack
+int		ft_print_stack_a(t_list **head_a); // pour tester la stack
 
 // INITIALISATION //
-int		parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
-int		fill_linkchain(t_list **head_a, char **argv, int i);
+void	parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
+void	fill_linkchain(t_list **head_a, char **argv, int i);
 long	ft_atoi(const char *str);
 int		is_num(char *str);
-int		is_dubble(t_list *head_A, int value);
+int		is_dubble(t_list **head_A, int value);
 
 // LINKED CHAIN UTILS //
 t_list	*ft_lstnew(int content);
@@ -100,6 +100,6 @@ void	put_stack_in_order(t_list **head, t_list *become_top, char c);
 t_list	*return_min(t_list **head_a);
 
 // ERRORS //
-int		ft_error(void);
+void	ft_error(void);
 
 #endif
