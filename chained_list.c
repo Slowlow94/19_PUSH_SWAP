@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:46:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 15:17:19 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 17:41:08 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_list	*ft_lstnew(int content)
 	if (!node)
 		return (NULL);
 	node->c = content;
+	ft_printf("pb in lstnew : %d\n", node->c);
 	node->next = NULL;
 	return (node);
 }

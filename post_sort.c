@@ -6,28 +6,34 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:53:10 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 15:20:03 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 18:28:12 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-// void	stock_actions(char *cnt)
-// {
-// 	static t_list *moves;
-// 	t_list *new_node;
+t_list *get_moves_list(void)
+{
+    static t_list *moves = NULL;
+    return moves;
+}
 
-// 	if (moves == NULL)
-// 	{
-// 		moves = ft_lstnew(cnt);
-// 		ft_printf("Premier noeud : %s\n", moves->c);
-// 	}
-// 	else
-// 	{
-// 		new_node = ft_lstnew(cnt);	
-// 		ft_lstadd_back(&moves, new_node);
-// 	}
-// }
+void	stock_actions(e_op ope)
+{
+	t_list *moves = get_moves_list();
+	t_list *new_node;
 
-// void	print_sort()
+	if (moves == NULL)
+	{
+		moves = ft_lstnew(ope);
+		ft_printf("Premier noeud : %d\n", moves->c);
+	}
+	else
+	{
+		new_node = ft_lstnew(ope);
+		ft_lstadd_back(&moves, new_node);
+		ft_printf("noeud suivant : %d\n", ft_lstlast(moves, 0)->c);
+	}
+}
+

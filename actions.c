@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:14:37 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 15:17:45 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 17:39:33 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ void	swap_a(t_list **head)
 {
 	t_list *first;
 	t_list *second;
+	int	index;
+
+	index = 1;
 	// char swap_a[2] = "sa";
 	first = NULL;
 	second = NULL;
@@ -28,7 +31,7 @@ void	swap_a(t_list **head)
 	second->next = first;
 	*head = second;
 	ft_printf("swap_a\n");
-	// stock_actions(swap_a);
+	stock_actions(index);
 }
 
 void	swap_b(t_list **head)
@@ -46,7 +49,7 @@ void	swap_b(t_list **head)
 	second->next = first;
 	*head = second;
 	ft_printf("swap_b\n");
-	// stock_actions(swap_b);
+	stock_actions(sb);
 }
 
 void	bottom_to_top_a(t_list **head)
@@ -67,6 +70,7 @@ void	bottom_to_top_a(t_list **head)
 	last->next = first;
 	*head = last;
 	ft_printf("bottom_to_top_a\n");
+	stock_actions(rra);
 }
 
 void	bottom_to_top_b(t_list **head)
@@ -87,6 +91,7 @@ void	bottom_to_top_b(t_list **head)
 	last->next = first;
 	*head = last;
 	ft_printf("bottom_to_top_b\n");
+	stock_actions(rrb);
 }
 
 void	top_to_bottom_a(t_list **head)
@@ -104,6 +109,7 @@ void	top_to_bottom_a(t_list **head)
 	current->next = first;
 	first->next = NULL;
 	ft_printf("top_to_bottom_a\n");
+	stock_actions(ra);
 }
 
 void	top_to_bottom_b(t_list **head)
@@ -121,6 +127,7 @@ void	top_to_bottom_b(t_list **head)
 	current->next = first;
 	first->next = NULL;
 	ft_printf("top_to_bottom_b\n");
+	stock_actions(rb);
 }
 
 void	top_a_to_top_b(t_list **head_1, t_list **head_2)
@@ -135,6 +142,8 @@ void	top_a_to_top_b(t_list **head_1, t_list **head_2)
 	first_a->next = *head_2;
 	*head_2 = first_a;
 	ft_printf("top_a_to_top_b\n");
+	ft_printf("%d\n", pb);
+	stock_actions(pb);
 }
 
 void	top_b_to_top_a(t_list **head_1, t_list **head_2)
@@ -149,4 +158,5 @@ void	top_b_to_top_a(t_list **head_1, t_list **head_2)
 	first_a->next = *head_2;
 	*head_2 = first_a;
 	ft_printf("top_b_to_top_a\n");
+	stock_actions(pa);
 }

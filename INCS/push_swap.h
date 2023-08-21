@@ -6,20 +6,37 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 15:19:44 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 18:27:34 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <limits.h>
-#include <stdbool.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stdbool.h>
 
-typedef struct	s_list
+typedef enum	e_op
+{
+	op_NULL,
+	sa,
+	sb,
+	ss,
+	ra,
+	rb,
+	rr,
+	rra,
+	rrb,
+	rrr,
+	pa,
+	pb
+} e_op;
+
+typedef struct s_list
 {
 	int				c;
+	e_op			ope;
 	int				price;
 	int				position;
 	bool			above_middle;
@@ -27,6 +44,7 @@ typedef struct	s_list
 	struct s_list	*next;
 	struct s_list	*target;
 }					t_list;
+
 
 int		ft_print_stack_a(t_list **head_a); // pour tester la stack
 
@@ -87,7 +105,8 @@ void	put_stack_in_order(t_list **head, t_list *become_top, char c);
 t_list	*return_min(t_list **head_a);
 
 // POST_SORT // 
-// void	stock_actions(char *cnt);
+void	stock_actions(enum e_op ope);
+t_list	*get_moves_list(void);
 
 // ERRORS //
 int		ft_error(void);
