@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 10:07:13 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:19:44 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,6 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdbool.h>
-
-// typedef struct	s_ps
-// {
-// 	t_stack A;
-// 	t_stack B;
-// }					t_ps;
-
-// typedef struct	s_stack
-// {
-// 	t_list **list;
-// 	int size;
-// 	t_list tail;
-// }					t_stack;
 
 typedef struct	s_list
 {
@@ -98,6 +85,9 @@ void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	put_stack_in_order(t_list **head, t_list *become_top, char c);
 t_list	*return_min(t_list **head_a);
+
+// POST_SORT // 
+// void	stock_actions(char *cnt);
 
 // ERRORS //
 int		ft_error(void);

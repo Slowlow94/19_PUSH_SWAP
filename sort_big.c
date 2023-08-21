@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/21 10:11:15 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:16:16 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	sort_big(t_list **head_a, t_list **head_b)
 		setting_nodes(head_a, head_b);
 		move_nodes(head_a, head_b);
 	}
+	put_stack_in_order(head_a, return_min(head_a), 'a');
 }
 
 
@@ -56,14 +57,10 @@ void	move_nodes(t_list **head_a, t_list **head_b)
 		low_below_target_am(head_a, head_b, lowcost);
 	else
 		both_below(head_a, head_b, lowcost);
+	setting_nodes(head_a, head_b);
 	put_stack_in_order(head_b, lowcost, 'b');
 	put_stack_in_order(head_a, lowcost->target, 'a');
 	top_b_to_top_a(head_b, head_a);
-	if (!(first == lowcost->target) && !(last == lowcost->target))
-	{
-		put_stack_in_order(head_a, return_min(head_a), 'a');
-		// ft_printf("head_a : %d, target de lowcost : %d\n", (*head_a)->c, lowcost->target->c);
-	}
 }
 
 t_list *return_min(t_list **head_a)
@@ -78,10 +75,7 @@ t_list *return_min(t_list **head_a)
 	while (current)
 	{
 		if (current->c < min->c)
-		{
 			min = current;
-			// ft_printf("Min in while : %d\n", min->c);
-		}
 		current = current->next;
 	}
 	return (min);

@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:07:36 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/17 15:29:51 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:15:38 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	wich_one_is_lowcost(t_list **head_b)
 			b->lowcost = true;
 		else
 			b->lowcost = false;
-		// ft_printf("%d est lowcost ? : %d\n", b->c, b->lowcost);
 		b = b->next;
 	}
 }
@@ -68,29 +67,13 @@ void	how_much(t_list **head_b, t_list **head_a)
 	while (b)
 	{
 		if (b->above_middle && (b->target)->above_middle)
-		{
 			b->price = b->position + (b->target)->position;
-			// ft_printf("1. Nombre et target au dessus : %d, prix : [%d]\n", b->c, b->price);
-			// ft_printf("Target : %d\n", b->target->c);
-		}
 		else if (b->above_middle && !((b->target)->above_middle))
-		{
 			b->price = b->position + (size_a - (b->target)->position);
-			// ft_printf("2. Nombre au dessus et target en dessous : %d, prix : [%d]\n", b->c, b->price);
-			// ft_printf("Target : %d\n", b->target->c);
-		}
 		else if (!(b->above_middle) && (b->target)->above_middle)
-		{
 			b->price = (size_b - b->position) + (b->target)->position;
-			// ft_printf("3. Nombre en dessous et target au dessus : %d, prix : [%d]\n", b->c, b->price);
-			// ft_printf("Target : %d\n", b->target->c);
-		}
-		else //if (!(b->above_middle) && !(b->target->above_middle))
-		{
+		else
 			b->price = (size_b - b->position) + (size_a - (b->target)->position);
-			// ft_printf("4. Nombre en dessous et target en dessous : %d, prix : [%d]\n", b->c, b->price);
-			// ft_printf("Target : %d\n", b->target->c);
-		}
 		b = b->next;
 	}
 }
@@ -109,7 +92,6 @@ void	is_above_middle(t_list **head)
 			stack->above_middle = true;
 		else
 			stack->above_middle = false;
-		// ft_printf("Le nombre %d est %d\n", stack->c, stack->above_middle);
 		stack = stack->next;
 	}
 }
@@ -147,13 +129,10 @@ void	find_target_node(t_list **head_a, t_list **head_b)
 	t_list *b;
 	int biggest_value;
 
-	a = NULL;
-	b = NULL;
 	b = *head_b;
 	while (b)
 	{
 		biggest_value = INT_MAX;
-		target_node = NULL;
 		a = *head_a;
 		while (a)
 		{

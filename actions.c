@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:14:37 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/17 15:19:22 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/21 15:17:45 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,32 +17,36 @@ void	swap_a(t_list **head)
 {
 	t_list *first;
 	t_list *second;
+	// char swap_a[2] = "sa";
 	first = NULL;
 	second = NULL;
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
 	first = *head;
 	second = (*head)->next;
-	first->next = second->next; // le 1er noeud pointe sur le 3eme noeud
-	second->next = first; // le 2eme noeud pointe sur le 1er
+	first->next = second->next;
+	second->next = first;
 	*head = second;
 	ft_printf("swap_a\n");
+	// stock_actions(swap_a);
 }
 
 void	swap_b(t_list **head)
 {
 	t_list *first;
 	t_list *second;
+	// char swap_b[2] = "sb";
 	first = NULL;
 	second = NULL;
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
 	first = *head;
 	second = (*head)->next;
-	first->next = second->next; // le 1er noeud pointe sur le 3eme noeud
-	second->next = first; // le 2eme noeud pointe sur le 1er
+	first->next = second->next;
+	second->next = first;
 	*head = second;
 	ft_printf("swap_b\n");
+	// stock_actions(swap_b);
 }
 
 void	bottom_to_top_a(t_list **head)

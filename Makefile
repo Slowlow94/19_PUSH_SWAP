@@ -9,7 +9,8 @@ SRCS	= init.c \
 		  actions_both.c \
 		  sort.c \
 		  sort_big.c \
-		  setting_nodes_utils.c
+		  setting_nodes_utils.c \
+		  post_sort.c
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
 CC		= gcc -fsanitize=address
