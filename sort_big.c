@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/20 16:36:48 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/21 10:11:15 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	move_nodes(t_list **head_a, t_list **head_b)
 	if (!(first == lowcost->target) && !(last == lowcost->target))
 	{
 		put_stack_in_order(head_a, return_min(head_a), 'a');
-		ft_printf("head_a : %d, target de lowcost : %d\n", (*head_a)->c, lowcost->target->c);
+		// ft_printf("head_a : %d, target de lowcost : %d\n", (*head_a)->c, lowcost->target->c);
 	}
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/20 17:22:52 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/21 10:07:13 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ typedef struct	s_list
 int		ft_print_stack_a(t_list **head_a); // pour tester la stack
 
 // INITIALISATION //
-void	parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
-void	fill_linkchain(t_list **head_a, char **argv, int i);
+int		parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
+int		fill_linkchain(t_list **head_a, char **argv, int i);
 long	ft_atoi(const char *str);
 int		is_num(char *str);
 int		is_dubble(t_list **head_A, int value);
@@ -100,6 +100,6 @@ void	put_stack_in_order(t_list **head, t_list *become_top, char c);
 t_list	*return_min(t_list **head_a);
 
 // ERRORS //
-void	ft_error(void);
+int		ft_error(void);
 
 #endif
