@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 18:27:34 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/22 12:00:32 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,14 @@ long	ft_atoi(const char *str);
 int		is_num(char *str);
 int		is_dubble(t_list **head_A, int value);
 
-// LINKED CHAIN UTILS //
+// LINKED CHAIN UTILS // --> modifier nom fct que j'ai mofiei depuis la libft
 t_list	*ft_lstnew(int content);
 t_list	*ft_lstlast(t_list *lst, int i);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 void	ft_lstclear(t_list **lst);
+void	deleteone(t_list **lst);
+t_list	*ft_lstnew_enum(e_op ope);
 
 // ACTIONS SORT // 
 void	swap_a(t_list **head);
@@ -106,7 +108,12 @@ t_list	*return_min(t_list **head_a);
 
 // POST_SORT // 
 void	stock_actions(enum e_op ope);
-t_list	*get_moves_list(void);
+t_list	**get_moves_list(void);
+void	sort_opti(t_list **move_list);
+void	replace_move(t_list **move_list, int pos, e_op ope);
+void	give_position_opti(t_list **head);
+void	print_action_list(t_list **move_list);
+void	init_moves_list(e_op ope);
 
 // ERRORS //
 int		ft_error(void);
