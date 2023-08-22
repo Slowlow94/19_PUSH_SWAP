@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   post_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:53:10 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 12:08:04 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/22 15:50:47 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	sort_opti(t_list **move_list)
 	t_list *move;
 	move = NULL;
 	move = *move_list;
-	ft_printf("valeur tete : %d\n", (*move_list)->c);
 	give_position_opti(move_list);
 	while (move && move->next)
 	{

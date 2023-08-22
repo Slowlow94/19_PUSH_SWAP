@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 12:00:32 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/22 17:12:42 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ typedef struct s_list
 	int				c;
 	e_op			ope;
 	int				price;
+	int				new_val;
 	int				position;
 	bool			above_middle;
 	bool			lowcost;
+	bool			new_val_done;
 	struct s_list	*next;
 	struct s_list	*target;
 }					t_list;
@@ -105,6 +107,13 @@ void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost);
 void	put_stack_in_order(t_list **head, t_list *become_top, char c);
 t_list	*return_min(t_list **head_a);
+
+// PRE_SORT //
+void	pre_sort(t_list **head_a, t_list **head_b);
+void	set_smallest(t_list **head_a);
+void	set_new_val_done(t_list **head_a);
+void	pre_sort_100(t_list **head_a, t_list **head_b);
+void	pre_sort_500(t_list **head_a, t_list **head_b);
 
 // POST_SORT // 
 void	stock_actions(enum e_op ope);

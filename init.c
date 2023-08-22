@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 11:16:19 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/22 21:29:54 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int	main(int argc, char **argv)
 	// ft_printf("Stack B\n\n\n");
 	// ft_print_stack_a(&head_b);
 
-	ft_lstclear(&head_a);
-	ft_lstclear(&head_b);
+	// ft_lstclear(&head_a);
+	// ft_lstclear(&head_b);
 	// system("leaks push_swap");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/22 12:39:09 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/22 21:18:52 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,9 @@
 
 void	sort_big(t_list **head_a, t_list **head_b)
 {
-	if (ft_lstsize(*head_a) > 100)
-	{
-		while (ft_lstsize(*head_a) > 3)
-			top_a_to_top_b(head_a, head_b);
-
-	}
+	pre_sort(head_a, head_b);
+	while (ft_lstsize(*head_a) > 3)
+		top_a_to_top_b(head_a, head_b);
 	sort_3(head_a);
 	while(*head_b)
 	{
@@ -44,13 +41,7 @@ void	setting_nodes(t_list **head_a, t_list **head_b)
 void	move_nodes(t_list **head_a, t_list **head_b)
 {
 	t_list *lowcost;
-	t_list *first;
-	t_list *last;
 
-	first = NULL;
-	last = NULL;
-	last = ft_lstlast(*head_a, 0);
-	first = *head_a;
 	lowcost = NULL;
 	lowcost = the_cheapest(head_b);
 	if (lowcost->above_middle && lowcost->target->above_middle)
