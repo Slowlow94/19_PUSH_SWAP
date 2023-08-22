@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/22 10:49:28 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/22 12:39:09 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,12 @@
 
 void	sort_big(t_list **head_a, t_list **head_b)
 {
-	while (ft_lstsize(*head_a) > 3)
-		top_a_to_top_b(head_a, head_b);
+	if (ft_lstsize(*head_a) > 100)
+	{
+		while (ft_lstsize(*head_a) > 3)
+			top_a_to_top_b(head_a, head_b);
+
+	}
 	sort_3(head_a);
 	while(*head_b)
 	{
