@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pre_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:26:06 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/22 21:53:40 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/23 12:54:06 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ void	pre_sort(t_list **head_a, t_list **head_b)
 {
 	set_smallest(head_a);
 	is_above_middle(head_a);
-	if (ft_lstsize(*head_a) <= 100)
+	if (ft_lstsize(*head_a) == 100)
 		pre_sort_100(head_a, head_b);
-	else
+	else if (ft_lstsize(*head_a) == 500)
 		pre_sort_500(head_a, head_b);
+	else
+		return ;
 }
 
 void pre_sort_100(t_list **head_a, t_list **head_b)
@@ -42,6 +44,33 @@ void pre_sort_100(t_list **head_a, t_list **head_b)
             current_threshold++;
     }
 }
+// void	pre_sort_100(t_list **head_a, t_list **head_b)
+// {
+// 	t_list *temp;
+// 	int i;
+// 	int current_min;
+// 	int	current_max;
+
+// 	temp = NULL;
+// 	i = 0;
+// 	while (i < 4 && ft_lstsize(*head_a) > 3)
+// 	{
+// 		temp = *head_a;
+// 		current_min = i * 33;
+// 		current_max = (i + 1) * 33;
+// 		while (temp && ft_lstsize(*head_a) > 3)
+// 		{
+// 			if (temp->new_val >= current_min && temp->new_val < current_max)
+// 			{
+// 				put_stack_in_order(head_a, temp, 'a');
+// 				top_a_to_top_b(head_a, head_b);
+// 				temp = *head_a;
+// 			}
+// 			temp = temp->next;
+// 		}
+// 		i++;
+// 	}
+// }
 
 void pre_sort_500(t_list **head_a, t_list **head_b)
 {
@@ -62,6 +91,33 @@ void pre_sort_500(t_list **head_a, t_list **head_b)
             current_threshold++;
     }
 }
+// void	pre_sort_500(t_list **head_a, t_list **head_b)
+// {
+// 	t_list *temp;
+// 	int i;
+// 	int current_min;
+// 	int	current_max;
+
+// 	temp = NULL;
+// 	i = 0;
+// 	while (i < 4 && ft_lstsize(*head_a) > 3)
+// 	{
+// 		temp = *head_a;
+// 		current_min = i * 125;
+// 		current_max = (i + 1) * 125;
+// 		while (temp && ft_lstsize(*head_a) > 3)
+// 		{
+// 			if (temp->new_val >= current_min && temp->new_val < current_max)
+// 			{
+// 				put_stack_in_order(head_a, temp, 'a');
+// 				top_a_to_top_b(head_a, head_b);
+// 				temp = *head_a;
+// 			}
+// 			temp = temp->next;
+// 		}
+// 		i++;
+// 	}
+// }
 
 void	set_smallest(t_list **head_a)
 {

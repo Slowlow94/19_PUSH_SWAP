@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 21:29:54 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/23 12:05:29 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int	main(int argc, char **argv)
 	if (parse_and_create_linkchain(&head_a, argc, argv) == 1)
 		return (1);
 	wich_sort(&head_a, &head_b);
-	// ft_printf("Stack A\n\n\n");
-	// ft_print_stack_a(&head_a);
-	// ft_printf("-----------------------\n");
-	// ft_printf("Stack B\n\n\n");
-	// ft_print_stack_a(&head_b);
+	ft_printf("Stack A\n\n\n");
+	ft_print_stack_a(&head_a);
+	ft_printf("-----------------------\n");
+	ft_printf("Stack B\n\n\n");
+	ft_print_stack_a(&head_b);
 
-	// ft_lstclear(&head_a);
-	// ft_lstclear(&head_b);
+	ft_lstclear(&head_a);
+	ft_lstclear(&head_b);
 	// system("leaks push_swap");
 }
