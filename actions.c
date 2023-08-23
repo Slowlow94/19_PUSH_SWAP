@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:14:37 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 11:18:15 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:13:42 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	swap_a(t_list **head)
 	int	index;
 
 	index = 1;
-	// char swap_a[2] = "sa";
 	first = NULL;
 	second = NULL;
 	if (*head == NULL || (*head)->next == NULL)
@@ -30,7 +29,6 @@ void	swap_a(t_list **head)
 	first->next = second->next;
 	second->next = first;
 	*head = second;
-	// ft_printf("swap_a\n");
 	stock_actions(index);
 }
 
@@ -38,7 +36,6 @@ void	swap_b(t_list **head)
 {
 	t_list *first;
 	t_list *second;
-	// char swap_b[2] = "sb";
 	first = NULL;
 	second = NULL;
 	if (*head == NULL || (*head)->next == NULL)
@@ -48,7 +45,6 @@ void	swap_b(t_list **head)
 	first->next = second->next;
 	second->next = first;
 	*head = second;
-	// ft_printf("swap_b\n");
 	stock_actions(sb);
 }
 
@@ -69,7 +65,6 @@ void	bottom_to_top_a(t_list **head)
 	previous_to_last->next = NULL;
 	last->next = first;
 	*head = last;
-	// ft_printf("bottom_to_top_a\n");
 	stock_actions(rra);
 }
 
@@ -90,7 +85,6 @@ void	bottom_to_top_b(t_list **head)
 	previous_to_last->next = NULL;
 	last->next = first;
 	*head = last;
-	// ft_printf("bottom_to_top_b\n");
 	stock_actions(rrb);
 }
 
@@ -108,7 +102,6 @@ void	top_to_bottom_a(t_list **head)
 	current = ft_lstlast(*head, 0);
 	current->next = first;
 	first->next = NULL;
-	// ft_printf("top_to_bottom_a\n");
 	stock_actions(ra);
 }
 
@@ -126,7 +119,6 @@ void	top_to_bottom_b(t_list **head)
 	current = ft_lstlast(*head, 0);
 	current->next = first;
 	first->next = NULL;
-	// ft_printf("top_to_bottom_b\n");
 	stock_actions(rb);
 }
 
@@ -141,7 +133,6 @@ void	top_a_to_top_b(t_list **head_1, t_list **head_2)
 	*head_1 = first_a->next;
 	first_a->next = *head_2;
 	*head_2 = first_a;
-	// ft_printf("top_a_to_top_b\n");
 	stock_actions(pb);
 }
 
@@ -156,6 +147,5 @@ void	top_b_to_top_a(t_list **head_1, t_list **head_2)
 	*head_1 = first_a->next;
 	first_a->next = *head_2;
 	*head_2 = first_a;
-	// ft_printf("top_b_to_top_a\n");
 	stock_actions(pa);
 }

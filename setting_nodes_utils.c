@@ -6,16 +6,16 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:07:36 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/21 15:15:38 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/23 13:02:37 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/ft_printf.h"
 #include "INCS/push_swap.h"
 
-t_list *the_cheapest(t_list **head_b)
+t_list	*the_cheapest(t_list **head_b)
 {
-	t_list *b;
+	t_list	*b;
 
 	b = NULL;
 	b = *head_b;
@@ -30,8 +30,8 @@ t_list *the_cheapest(t_list **head_b)
 
 void	wich_one_is_lowcost(t_list **head_b)
 {
-	t_list *b;
-	t_list *lowcost;
+	t_list	*b;
+	t_list	*lowcost;
 
 	b = NULL;
 	lowcost = NULL;
@@ -56,9 +56,9 @@ void	wich_one_is_lowcost(t_list **head_b)
 
 void	how_much(t_list **head_b, t_list **head_a)
 {
-	t_list *b;
-	int	size_a;
-	int	size_b;
+	t_list	*b;
+	int		size_a;
+	int		size_b;
 
 	b = NULL;
 	b = *head_b;

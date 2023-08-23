@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 11:59:17 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/23 13:09:03 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	wich_sort(t_list **head_a, t_list **head_b)
 {
-	int size;
+	int	size;
 
 	size = ft_lstsize(*head_a);
 	if (size == 0)
@@ -32,9 +32,9 @@ void	wich_sort(t_list **head_a, t_list **head_b)
 
 void	sort_3(t_list **head_a)
 {
-	t_list *t;
-	t_list *m;
-	t_list *b;
+	t_list	*t;
+	t_list	*m;
+	t_list	*b;
 
 	t = *head_a;
 	m = (*head_a)->next;
@@ -59,8 +59,8 @@ void	sort_3(t_list **head_a)
 
 int	is_min_on_top(t_list **head_a)
 {
-	int  min;
-	t_list *first;
+	int		min;
+	t_list	*first;
 
 	first = NULL;
 	first = *head_a;
@@ -76,8 +76,8 @@ int	is_min_on_top(t_list **head_a)
 
 int	is_min_on_bottom(t_list **head_a)
 {
-	t_list *last;
-	t_list *first;
+	t_list	*last;
+	t_list	*first;
 
 	first = NULL;
 	last = NULL;
@@ -115,4 +115,3 @@ void	sort_5(t_list **head_a, t_list **head_b)
 			top_b_to_top_a(head_b, head_a);
 	}
 }
-

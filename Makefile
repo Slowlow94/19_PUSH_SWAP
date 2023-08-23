@@ -9,6 +9,7 @@ SRCS	= init.c \
 		  actions_both.c \
 		  sort.c \
 		  sort_big.c \
+		  sort_big_moves.c \
 		  setting_nodes_utils.c \
 		  post_sort.c \
 		  pre_sort.c

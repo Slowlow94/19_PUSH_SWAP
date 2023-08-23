@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 17:12:42 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/23 13:48:05 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
+# include "ft_printf.h"
 
-typedef enum	e_op
+typedef enum e_op
 {
 	op_NULL,
 	sa,
@@ -31,7 +32,7 @@ typedef enum	e_op
 	rrr,
 	pa,
 	pb
-} e_op;
+}	e_op;
 
 typedef struct s_list
 {
@@ -46,7 +47,6 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*target;
 }					t_list;
-
 
 int		ft_print_stack_a(t_list **head_a); // pour tester la stack
 
@@ -114,6 +114,7 @@ void	set_smallest(t_list **head_a);
 void	set_new_val_done(t_list **head_a);
 void	pre_sort_100(t_list **head_a, t_list **head_b);
 void	pre_sort_500(t_list **head_a, t_list **head_b);
+void	maybe_ss(t_list **head_a, t_list **head_b);
 
 // POST_SORT // 
 void	stock_actions(enum e_op ope);

@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 18:40:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/16 18:06:17 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:13:02 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	swap_both(t_list **head_a, t_list **head_b)
 {
 	swap_a(head_a);
 	swap_b(head_b);
-	// swap(data->head_A);
-	// swap(data->head_B);
 }
 
 void	bottom_to_top_both(t_list **head_a, t_list **head_b)
