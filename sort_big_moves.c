@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big_moves.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:59:33 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/23 14:48:42 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/24 12:51:11 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	while (lowcost->position > 0 && lowcost->target->position > 0)
+	while (lowcost->pos > 0 && lowcost->target->pos > 0)
 	{
 		bottom_to_top_both(head_a, head_b);
 		give_position(head_a, head_b);
 	}
-	while (lowcost->target->position > 0)
+	while (lowcost->target->pos > 0)
 	{
 		bottom_to_top_a(head_a);
 		give_position(head_a, head_b);
 	}
-	while (lowcost->position > 0)
+	while (lowcost->pos > 0)
 	{
 		bottom_to_top_a(head_b);
 		give_position(head_a, head_b);
@@ -34,12 +34,12 @@ void	both_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 
 void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	while (lowcost->position > 0)
+	while (lowcost->pos > 0)
 	{
 		bottom_to_top_b(head_b);
 		give_position(head_a, head_b);
 	}
-	while (lowcost->target->position > 0)
+	while (lowcost->target->pos > 0)
 	{
 		top_to_bottom_a(head_a);
 		give_position(head_a, head_b);
@@ -48,21 +48,21 @@ void	low_below_target_am(t_list **head_a, t_list **head_b, t_list *lowcost)
 
 void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	while (lowcost->position > 0)
+	while (lowcost->pos > 0)
 	{
-		if (lowcost->position == 1)
+		if (lowcost->pos == 1)
 			swap_b(head_b);
 		else
 			top_to_bottom_b(head_b);
 		give_position(head_a, head_b);
 	}
-	while (lowcost->target->position > 0)
+	while (lowcost->target->pos > 0)
 	{
 		bottom_to_top_a(head_a);
 		if (lowcost->target == ft_lstlast(*head_a, 0))
 		{
 			give_position(head_a, head_b);
-			break;
+			break ;
 		}	
 		give_position(head_a, head_b);
 	}
@@ -70,20 +70,20 @@ void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 
 void	both_above_middle(t_list **head_a, t_list **head_b, t_list *lowcost)
 {
-	while (lowcost->position > 0 && lowcost->target->position > 0)
+	while (lowcost->pos > 0 && lowcost->target->pos > 0)
 	{
 		top_to_bottom_both(head_a, head_b);
 		give_position(head_a, head_b);
 	}
-	while (lowcost->position > 0)
+	while (lowcost->pos > 0)
 	{
-		if (lowcost->position == 1)
+		if (lowcost->pos == 1)
 			swap_b(head_b);
 		else
 			top_to_bottom_b(head_b);
 		give_position(head_a, head_b);
 	}
-	while (lowcost->target->position > 0)
+	while (lowcost->target->pos > 0)
 	{
 		top_to_bottom_a(head_a);
 		give_position(head_a, head_b);

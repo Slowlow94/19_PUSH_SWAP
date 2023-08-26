@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/23 15:18:23 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/24 12:55:59 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	move_nodes(t_list **head_a, t_list **head_b)
 	setting_nodes(head_a, head_b);
 	var1 = put_stack_in_order_simulation(head_b, lowcost, 'b');
 	if (var1 == put_stack_in_order_simulation(head_a, lowcost->target, 'a'))
-	// je simule 
 	{
 		if (var1 == 1)
 			top_to_bottom_both(head_a, head_b);

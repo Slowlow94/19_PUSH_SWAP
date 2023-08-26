@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_stack_a.c                                   :+:      :+:    :+:   */
+/*   pre_sort_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 16:17:42 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 13:17:56 by Sarah            ###   ########.fr       */
+/*   Created: 2023/08/24 13:28:53 by Sarah             #+#    #+#             */
+/*   Updated: 2023/08/24 13:29:56 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
+#include "INCS/push_swap.h"
 
-int	ft_print_stack_a(t_list **head_a)
+void	set_new_val_done(t_list **head_a)
 {
-	int		i;
-	t_list	*first;
+	t_list	*temp;
 
-	first = NULL;
-	first = *head_a;
-	i = 0;
-	while (first)
+	temp = NULL;
+	temp = *head_a;
+	while (temp)
 	{
-		ft_printf("Position %d : [%d]\n", i, (first)->c);
-		first = first->next;
-		i++;
+		temp->new_val_done = 0;
+		temp->new_val = 0;
+		temp = temp->next;
 	}
-	return (0);
 }

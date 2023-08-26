@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/23 13:48:05 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/24 13:01:56 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdbool.h>
 # include "ft_printf.h"
 
-typedef enum e_op
+typedef enum op
 {
 	op_NULL,
 	sa,
@@ -32,15 +32,15 @@ typedef enum e_op
 	rrr,
 	pa,
 	pb
-}	e_op;
+}	t_op;
 
 typedef struct s_list
 {
 	int				c;
-	e_op			ope;
+	enum op			ope;
 	int				price;
 	int				new_val;
-	int				position;
+	int				pos;
 	bool			above_middle;
 	bool			lowcost;
 	bool			new_val_done;
@@ -64,7 +64,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 void	ft_lstclear(t_list **lst);
 void	deleteone(t_list **lst);
-t_list	*ft_lstnew_enum(e_op ope);
+t_list	*ft_lstnew_enum(t_op ope);
 
 // ACTIONS SORT // 
 void	swap_a(t_list **head);
@@ -117,13 +117,13 @@ void	pre_sort_500(t_list **head_a, t_list **head_b);
 void	maybe_ss(t_list **head_a, t_list **head_b);
 
 // POST_SORT // 
-void	stock_actions(enum e_op ope);
+void	stock_actions(t_op ope);
 t_list	**get_moves_list(void);
 void	sort_opti(t_list **move_list);
-void	replace_move(t_list **move_list, int pos, e_op ope);
+void	replace_move(t_list **move_list, int pos, t_op ope);
 void	give_position_opti(t_list **head);
 void	print_action_list(t_list **move_list);
-void	init_moves_list(e_op ope);
+void	init_moves_list(t_op ope);
 
 // ERRORS //
 int		ft_error(void);

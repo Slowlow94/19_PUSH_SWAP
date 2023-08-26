@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chained_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:46:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/22 11:17:05 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/24 13:14:39 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_list	*ft_lstnew(int content)
 	return (node);
 }
 
-t_list	*ft_lstnew_enum(e_op ope)
+t_list	*ft_lstnew_enum(t_op ope)
 {
 	t_list	*node;
 
@@ -79,31 +79,4 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 	}
 	return (lenght);
-}
-
-void	ft_lstclear(t_list **lst)
-{
-	t_list	*temp;
-
-	temp = NULL;
-	if (!lst)
-		return ;
-	while (*lst != NULL)
-	{
-		temp = *lst;
-		*lst = (*lst)->next;
-		free(temp);
-	}
-	*lst = NULL;
-}
-
-void	deleteone(t_list **lst)
-{
-	t_list *temp;
-
-	if (!lst || !*lst)
-		return;
-	temp = *lst;
-	*lst = (*lst)->next;
-	free(temp);
 }

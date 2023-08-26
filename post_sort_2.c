@@ -1,31 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_stack_a.c                                   :+:      :+:    :+:   */
+/*   post_sort_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/07 16:17:42 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 13:17:56 by Sarah            ###   ########.fr       */
+/*   Created: 2023/08/24 13:04:25 by Sarah             #+#    #+#             */
+/*   Updated: 2023/08/24 13:16:59 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-int	ft_print_stack_a(t_list **head_a)
+void	give_position_opti(t_list **head)
 {
 	int		i;
-	t_list	*first;
+	t_list	*a;
 
-	first = NULL;
-	first = *head_a;
+	a = NULL;
+	a = *head;
 	i = 0;
-	while (first)
+	while (a)
 	{
-		ft_printf("Position %d : [%d]\n", i, (first)->c);
-		first = first->next;
+		a->pos = i;
 		i++;
+		a = a->next;
 	}
-	return (0);
+}
+
+void	print_action_list(t_list **move_list)
+{
+	const char	*op_names[] = {
+		"op_NULL",
+		"sa",
+		"sb",
+		"ss",
+		"ra",
+		"rb",
+		"rr",
+		"rra",
+		"rrb",
+		"rrr",
+		"pa",
+		"pb" };
+
+	while (*move_list && (*move_list)->next)
+	{
+		ft_printf("%s\n", op_names[(*move_list)->ope]);
+		move_list = &(*move_list)->next;
+	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pre_sort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:26:06 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/23 14:26:39 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/24 13:32:53 by Sarah            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,46 +25,55 @@ void	pre_sort(t_list **head_a, t_list **head_b)
 		return ;
 }
 
-void pre_sort_100(t_list **head_a, t_list **head_b)
+void	pre_sort_100(t_list **head_a, t_list **head_b)
 {
-    t_list *temp;
-    int thresholds[] = {33, 66, 96};
-    int current_threshold = 0;
+	t_list	*temp;
+	int		current_threshold;
+	int		thresholds[3];
 
-    temp = *head_a;
-    while (temp && current_threshold < 3)
-    {
-        if (temp->new_val <= thresholds[current_threshold])
-        {
-            put_stack_in_order(head_a, temp, 'a');
-            top_a_to_top_b(head_a, head_b);
+	thresholds[0] = 33;
+	thresholds[1] = 66;
+	thresholds[2] = 96;
+	current_threshold = 0;
+	temp = *head_a;
+	while (temp && current_threshold < 3)
+	{
+		if (temp->new_val <= thresholds[current_threshold])
+		{
+			put_stack_in_order(head_a, temp, 'a');
+			top_a_to_top_b(head_a, head_b);
 			maybe_ss(head_a, head_b);
-            temp = *head_a;
-        }
-        else
-            current_threshold++;
-    }
+			temp = *head_a;
+		}
+		else
+			current_threshold++;
+	}
 }
 
-void pre_sort_500(t_list **head_a, t_list **head_b)
+void	pre_sort_500(t_list **head_a, t_list **head_b)
 {
-    t_list *temp;
-    int thresholds[] = {125, 250, 375, 496};
-    int current_threshold = 0;
+	t_list	*temp;
+	int		thresholds[4];
+	int		current_threshold;
 
-    temp = *head_a;
-    while (temp && current_threshold < 4)
-    {
-        if (temp->new_val <= thresholds[current_threshold])
-        {
-            put_stack_in_order(head_a, temp, 'a');
-            top_a_to_top_b(head_a, head_b);
+	thresholds[0] = 125;
+	thresholds[1] = 250;
+	thresholds[2] = 375;
+	thresholds[3] = 496;
+	current_threshold = 0;
+	temp = *head_a;
+	while (temp && current_threshold < 4)
+	{
+		if (temp->new_val <= thresholds[current_threshold])
+		{
+			put_stack_in_order(head_a, temp, 'a');
+			top_a_to_top_b(head_a, head_b);
 			maybe_ss(head_a, head_b);
-            temp = *head_a;
-        }
-        else
-            current_threshold++;
-    }
+			temp = *head_a;
+		}
+		else
+			current_threshold++;
+	}
 }
 
 void	maybe_ss(t_list **head_a, t_list **head_b)
@@ -84,10 +93,10 @@ void	maybe_ss(t_list **head_a, t_list **head_b)
 
 void	set_smallest(t_list **head_a)
 {
-	t_list *min;
-	t_list *current;
-	int new_value;
-	int	size;
+	t_list	*min;
+	t_list	*current;
+	int		new_value;
+	int		size;
 
 	size = ft_lstsize(*head_a);
 	new_value = 0;
@@ -108,19 +117,5 @@ void	set_smallest(t_list **head_a)
 			min->new_val_done = 1;
 			new_value++;
 		}
-	}
-}
-
-void	set_new_val_done(t_list **head_a)
-{
-	t_list *temp;
-
-	temp = NULL;
-	temp = *head_a;
-	while (temp)
-	{
-		temp->new_val_done = 0;
-		temp->new_val = 0;
-		temp = temp->next;
 	}
 }
