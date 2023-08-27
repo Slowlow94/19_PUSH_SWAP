@@ -54,6 +54,8 @@ long	ft_atoi(const char *str)
 	s = (char *)str;
 	res = 0;
 	sign = 1;
+	while ((*s > 8 && *s < 14) || *s == 32)
+		s++;
 	if (*s == '+' || *s == '-')
 	{
 		if (*s == '-')
