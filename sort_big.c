@@ -40,8 +40,6 @@ void	setting_nodes(t_list **head_a, t_list **head_b)
 void	move_nodes(t_list **head_a, t_list **head_b)
 {
 	t_list	*lowcost;
-	int		var1;
-
 	lowcost = NULL;
 	lowcost = the_cheapest(head_b);
 	if (lowcost->above_middle && lowcost->target->above_middle)
@@ -53,19 +51,8 @@ void	move_nodes(t_list **head_a, t_list **head_b)
 	else
 		both_below(head_a, head_b, lowcost);
 	setting_nodes(head_a, head_b);
-	var1 = put_stack_in_order_simulation(head_b, lowcost, 'b');
-	if (var1 == put_stack_in_order_simulation(head_a, lowcost->target, 'a'))
-	{
-		if (var1 == 1)
-			top_to_bottom_both(head_a, head_b);
-		else
-			bottom_to_top_both(head_a, head_b);
-	}
-	else
-	{
-		put_stack_in_order(head_b, lowcost, 'b');
-		put_stack_in_order(head_a, lowcost->target, 'a');
-	}
+	put_stack_in_order(head_b, lowcost, 'b');
+	put_stack_in_order(head_a, lowcost->target, 'a');
 	top_b_to_top_a(head_b, head_a);
 }
 

@@ -58,14 +58,10 @@ void	sort_opti(t_list **move_list)
 			replace_move(move_list, move->pos, ss);
 		if ((move->ope == 4 && move->next->ope == 5)
 			|| (move->ope == 5 && move->next->ope == 4))
-		{
 			replace_move(move_list, move->pos, rr);
-		}
 		if ((move->ope == 7 && move->next->ope == 8)
 			|| (move->ope == 8 && move->next->ope == 7))
-		{
 			replace_move(move_list, move->pos, rrr);
-		}
 		move = move->next;
 	}
 }

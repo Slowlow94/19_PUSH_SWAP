@@ -27,7 +27,8 @@ void	pre_sort(t_list **head_a, t_list **head_b)
 
 void	pre_sort_100(t_list **head_a, t_list **head_b)
 {
-	t_list	*temp;
+	// t_list	*temp;
+	int		i;
 	int		current_threshold;
 	int		thresholds[3];
 
@@ -35,45 +36,53 @@ void	pre_sort_100(t_list **head_a, t_list **head_b)
 	thresholds[1] = 66;
 	thresholds[2] = 96;
 	current_threshold = 0;
-	temp = *head_a;
-	while (temp && current_threshold < 3)
+	i = 0;
+	// temp = *head_a;
+	while (head_a && current_threshold < 3 && i < ((current_threshold + 1) * 33))
 	{
-		if (temp->new_val <= thresholds[current_threshold])
+		if ((*head_a)->new_val <= thresholds[current_threshold])
 		{
-			put_stack_in_order(head_a, temp, 'a');
+			// put_stack_in_order(head_a, temp, 'a');
 			top_a_to_top_b(head_a, head_b);
 			maybe_ss(head_a, head_b);
-			temp = *head_a;
+			// temp = *head_a;
+			i++;
 		}
 		else
-			current_threshold++;
+			top_to_bottom_a(head_a);
 	}
+	current_threshold++;
 }
 
 void	pre_sort_500(t_list **head_a, t_list **head_b)
 {
-	t_list	*temp;
+	// t_list	*temp;
 	int		thresholds[4];
 	int		current_threshold;
+	int		i;
 
 	thresholds[0] = 125;
 	thresholds[1] = 250;
 	thresholds[2] = 375;
 	thresholds[3] = 496;
 	current_threshold = 0;
-	temp = *head_a;
-	while (temp && current_threshold < 4)
+	// temp = *head_a;
+	i = 0;
+	while (head_a && current_threshold < 4 && i < ((current_threshold + 1) * 125))
 	{
-		if (temp->new_val <= thresholds[current_threshold])
+		if ((*head_a)->new_val <= thresholds[current_threshold])
 		{
-			put_stack_in_order(head_a, temp, 'a');
+			// put_stack_in_order(head_a, temp, 'a');
 			top_a_to_top_b(head_a, head_b);
 			maybe_ss(head_a, head_b);
-			temp = *head_a;
+			// temp = *head_a;
+			i++;
 		}
 		else
-			current_threshold++;
+			top_to_bottom_a(head_a);
 	}
+	current_threshold++;
+
 }
 
 void	maybe_ss(t_list **head_a, t_list **head_b)

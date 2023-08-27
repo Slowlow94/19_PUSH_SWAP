@@ -59,12 +59,12 @@ int		is_dubble(t_list **head_A, int value);
 
 // LINKED CHAIN UTILS // --> modifier nom fct que j'ai mofiei depuis la libft
 t_list	*ft_lstnew(int content);
-t_list	*ft_lstlast(t_list *lst, int i);
+t_list	*ft_lstnew_enum(t_op ope);
+t_list	*ft__last(t_list *lst, int i);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
 void	ft_lstclear(t_list **lst);
 void	deleteone(t_list **lst);
-t_list	*ft_lstnew_enum(t_op ope);
 
 // ACTIONS SORT // 
 void	swap_a(t_list **head);
