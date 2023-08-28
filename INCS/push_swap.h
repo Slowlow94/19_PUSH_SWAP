@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 12:41:34 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/28 17:10:39 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,6 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*target;
 }					t_list;
-
-int		ft_print_stack_a(t_list **head_a); // pour tester la stack
 
 // INITIALISATION //
 int		parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
@@ -127,4 +125,5 @@ void	print_action_list(t_list **move_list);
 void	init_moves_list(t_op ope);
 t_list	**get_moves_list(void);
 
+int	ft_print_stack_a(t_list **head_a); // !!!!!!!!!!!!!!!!!
 #endif

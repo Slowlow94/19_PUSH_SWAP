@@ -6,7 +6,6 @@ SRCS	= main.c \
 		  chained_list_2.c \
 		  ft_printf.c \
 		  ft_printf_utils.c \
-		  printf_stack_a.c \
 		  actions.c \
 		  actions_2.c \
 		  actions_both.c \
@@ -18,7 +17,8 @@ SRCS	= main.c \
 		  post_sort.c \
 		  post_sort_2.c \
 		  pre_sort.c \
-		  pre_sort_2.c
+		  pre_sort_2.c \
+		  printf_stack_a.c
 
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
