@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:08:11 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/24 13:08:35 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 10:15:09 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	top_to_bottom_b(t_list **head)
 		return ;
 	first = *head;
 	*head = first->next;
-	current = ft_lstlast(*head, 0);
+	current = ft_lc_last(*head, 0);
 	current->next = first;
 	first->next = NULL;
 	stock_actions(rb);

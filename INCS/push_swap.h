@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 13:01:56 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 12:41:34 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdbool.h>
-# include "ft_printf.h"
 
 typedef enum op
 {
@@ -53,18 +52,21 @@ int		ft_print_stack_a(t_list **head_a); // pour tester la stack
 // INITIALISATION //
 int		parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
 int		fill_linkchain(t_list **head_a, char **argv, int i);
-long	ft_atoi(const char *str);
 int		is_num(char *str);
 int		is_dubble(t_list **head_A, int value);
+long	ft_atoi(const char *str);
 
-// LINKED CHAIN UTILS // --> modifier nom fct que j'ai mofiei depuis la libft
-t_list	*ft_lstnew(int content);
-t_list	*ft_lstnew_enum(t_op ope);
-t_list	*ft__last(t_list *lst, int i);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-int		ft_lstsize(t_list *lst);
-void	ft_lstclear(t_list **lst);
+// ERRORS //
+int		ft_error(void);
+
+// LINKED CHAIN UTILS //
+void	ft_lc_add_back(t_list **lst, t_list *new);
+void	ft_lc_clear(t_list **lst);
 void	deleteone(t_list **lst);
+int		ft_lc_size(t_list *lst);
+t_list	*ft_lc_new(int content);
+t_list	*ft_lc_new_enum(t_op ope);
+t_list	*ft_lc_last(t_list *lst, int i);
 
 // ACTIONS SORT // 
 void	swap_a(t_list **head);
@@ -93,11 +95,11 @@ void	move_nodes(t_list **head_a, t_list **head_b);
 
 // SORT_UTILS FOR SORT_BIG //
 void	find_target_node(t_list **head_a, t_list **head_b);
-t_list	*find_smallest(t_list **head_a, int value_b);
 void	give_position(t_list **head_a, t_list **head_b);
 void	how_much(t_list **head_b, t_list **head_a);
 void	is_above_middle(t_list **head);
 void	wich_one_is_lowcost(t_list **head_b);
+t_list	*find_smallest(t_list **head_a, int value_b);
 t_list	*the_cheapest(t_list **head_b);
 
 // MOVE_NODES UTILS //
@@ -118,14 +120,11 @@ void	maybe_ss(t_list **head_a, t_list **head_b);
 
 // POST_SORT // 
 void	stock_actions(t_op ope);
-t_list	**get_moves_list(void);
 void	sort_opti(t_list **move_list);
 void	replace_move(t_list **move_list, int pos, t_op ope);
 void	give_position_opti(t_list **head);
 void	print_action_list(t_list **move_list);
 void	init_moves_list(t_op ope);
-
-// ERRORS //
-int		ft_error(void);
+t_list	**get_moves_list(void);
 
 #endif

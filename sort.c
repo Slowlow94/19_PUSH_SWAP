@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/23 13:09:03 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/28 13:20:37 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@ void	wich_sort(t_list **head_a, t_list **head_b)
 {
 	int	size;
 
-	size = ft_lstsize(*head_a);
+	size = ft_lc_size(*head_a);
 	if (size == 0)
 		return ;
+	else if (size == 2)
+	{
+		if ((*head_a)->c > (*head_a)->next->c)
+			swap_a(head_a);
+	}
 	else if (size == 3)
 		sort_3(head_a);
 	else if (size > 3 && size <= 5)
@@ -38,7 +43,7 @@ void	sort_3(t_list **head_a)
 
 	t = *head_a;
 	m = (*head_a)->next;
-	b = ft_lstlast(*head_a, 0);
+	b = ft_lc_last(*head_a, 0);
 	if ((t->c > m->c) && (t->c < b->c) && (m->c < b->c))
 		swap_a(head_a);
 	if ((t->c > m->c) && (m->c > b->c) && (b->c < t->c))
@@ -82,7 +87,7 @@ int	is_min_on_bottom(t_list **head_a)
 	first = NULL;
 	last = NULL;
 	first = *head_a;
-	last = ft_lstlast(*head_a, 0);
+	last = ft_lc_last(*head_a, 0);
 	while (first != NULL)
 	{
 		if (first->c < last->c)
@@ -94,7 +99,7 @@ int	is_min_on_bottom(t_list **head_a)
 
 void	sort_5(t_list **head_a, t_list **head_b)
 {
-	while (ft_lstsize(*head_a) > 3)
+	while (ft_lc_size(*head_a) > 3)
 	{
 		if (is_min_on_top(head_a) == 0)
 			top_a_to_top_b(head_a, head_b);

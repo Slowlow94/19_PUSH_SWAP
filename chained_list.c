@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   chained_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:46:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 13:14:39 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 10:15:49 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/push_swap.h"
 #include "INCS/ft_printf.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lc_new(int content)
 {
 	t_list	*node;
 
@@ -25,7 +25,7 @@ t_list	*ft_lstnew(int content)
 	return (node);
 }
 
-t_list	*ft_lstnew_enum(t_op ope)
+t_list	*ft_lc_new_enum(t_op ope)
 {
 	t_list	*node;
 
@@ -37,7 +37,7 @@ t_list	*ft_lstnew_enum(t_op ope)
 	return (node);
 }
 
-t_list	*ft_lstlast(t_list *lst, int i)
+t_list	*ft_lc_last(t_list *lst, int i)
 {
 	int	j;
 	int	size;
@@ -45,7 +45,7 @@ t_list	*ft_lstlast(t_list *lst, int i)
 	if (!lst)
 		return (NULL);
 	j = 0;
-	size = ft_lstsize(lst) - i;
+	size = ft_lc_size(lst) - i;
 	while (lst->next != NULL && j < (size - 1))
 	{
 		lst = lst->next;
@@ -54,7 +54,7 @@ t_list	*ft_lstlast(t_list *lst, int i)
 	return (lst);
 }
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lc_add_back(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
@@ -63,10 +63,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return ;
 	}
-	ft_lstlast(*lst, 0)->next = new;
+	ft_lc_last(*lst, 0)->next = new;
 }
 
-int	ft_lstsize(t_list *lst)
+int	ft_lc_size(t_list *lst)
 {
 	int		lenght;
 

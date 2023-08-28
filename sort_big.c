@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/24 12:55:59 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 10:15:49 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	sort_big(t_list **head_a, t_list **head_b)
 {
 	pre_sort(head_a, head_b);
-	while (ft_lstsize(*head_a) > 3)
+	while (ft_lc_size(*head_a) > 3)
 		top_a_to_top_b(head_a, head_b);
 	sort_3(head_a);
 	while (*head_b)
@@ -40,6 +40,7 @@ void	setting_nodes(t_list **head_a, t_list **head_b)
 void	move_nodes(t_list **head_a, t_list **head_b)
 {
 	t_list	*lowcost;
+
 	lowcost = NULL;
 	lowcost = the_cheapest(head_b);
 	if (lowcost->above_middle && lowcost->target->above_middle)

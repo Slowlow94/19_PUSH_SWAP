@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   chained_list_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:14:28 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/24 13:14:42 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 10:15:59 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "INCS/ft_printf.h"
 #include "INCS/push_swap.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_lc_clear(t_list **lst)
 {
 	t_list	*temp;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   post_sort_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 13:04:25 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/24 13:16:59 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 13:20:11 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ void	print_action_list(t_list **move_list)
 		ft_printf("%s\n", op_names[(*move_list)->ope]);
 		move_list = &(*move_list)->next;
 	}
+	if (*move_list && (*move_list)->next == NULL)
+		ft_printf("%s\n", op_names[(*move_list)->ope]);
 }

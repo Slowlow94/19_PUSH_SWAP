@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 16:14:37 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 13:08:08 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 13:17:40 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	swap_a(t_list **head)
 {
 	t_list	*first;
 	t_list	*second;
-	int		index;
+	// int		index;
 
-	index = 1;
+	// index = 1;
 	first = NULL;
 	second = NULL;
 	if (*head == NULL || (*head)->next == NULL)
@@ -29,7 +29,7 @@ void	swap_a(t_list **head)
 	first->next = second->next;
 	second->next = first;
 	*head = second;
-	stock_actions(index);
+	stock_actions(sa);
 }
 
 void	swap_b(t_list **head)
@@ -61,8 +61,8 @@ void	bottom_to_top_a(t_list **head)
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
 	first = *head;
-	last = ft_lstlast(*head, 0);
-	previous_to_last = ft_lstlast(*head, 1);
+	last = ft_lc_last(*head, 0);
+	previous_to_last = ft_lc_last(*head, 1);
 	previous_to_last->next = NULL;
 	last->next = first;
 	*head = last;
@@ -81,8 +81,8 @@ void	bottom_to_top_b(t_list **head)
 	if (*head == NULL || (*head)->next == NULL)
 		return ;
 	first = *head;
-	last = ft_lstlast(*head, 0);
-	previous_to_last = ft_lstlast(*head, 1);
+	last = ft_lc_last(*head, 0);
+	previous_to_last = ft_lc_last(*head, 1);
 	previous_to_last->next = NULL;
 	last->next = first;
 	*head = last;
@@ -100,7 +100,7 @@ void	top_to_bottom_a(t_list **head)
 		return ;
 	first = *head;
 	*head = first->next;
-	current = ft_lstlast(*head, 0);
+	current = ft_lc_last(*head, 0);
 	current->next = first;
 	first->next = NULL;
 	stock_actions(ra);

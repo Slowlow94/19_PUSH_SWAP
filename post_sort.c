@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   post_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:53:10 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 13:05:36 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 13:21:16 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	init_moves_list(t_op ope)
 
 	moves = get_moves_list();
 	if (!*moves)
-		*moves = ft_lstnew_enum(ope);
+		*moves = ft_lc_new_enum(ope);
 }
 
 void	stock_actions(t_op ope)
@@ -39,8 +39,8 @@ void	stock_actions(t_op ope)
 		init_moves_list(ope);
 	else
 	{
-		new_node = ft_lstnew_enum(ope);
-		ft_lstadd_back(moves, new_node);
+		new_node = ft_lc_new_enum(ope);
+		ft_lc_add_back(moves, new_node);
 	}
 }
 

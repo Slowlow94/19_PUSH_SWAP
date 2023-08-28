@@ -1,5 +1,6 @@
 NAME	= push_swap
-SRCS	= init.c \
+SRCS	= main.c \
+		  init.c \
 		  init_utils.c \
 		  chained_list.c \
 		  chained_list_2.c \
@@ -18,6 +19,7 @@ SRCS	= init.c \
 		  post_sort_2.c \
 		  pre_sort.c \
 		  pre_sort_2.c
+
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
 CC		= gcc -fsanitize=address

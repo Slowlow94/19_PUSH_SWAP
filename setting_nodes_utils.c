@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setting_nodes_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 15:07:36 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/24 12:54:01 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/28 10:15:49 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,8 @@ void	how_much(t_list **head_b, t_list **head_a)
 
 	b = NULL;
 	b = *head_b;
-	size_a = ft_lstsize(*head_a);
-	size_b = ft_lstsize(*head_b);
+	size_a = ft_lc_size(*head_a);
+	size_b = ft_lc_size(*head_b);
 	while (b)
 	{
 		if (b->above_middle && (b->target)->above_middle)
@@ -85,7 +85,7 @@ void	is_above_middle(t_list **head)
 
 	stack = NULL;
 	stack = *head;
-	middle = ft_lstsize(*head) / 2;
+	middle = ft_lc_size(*head) / 2;
 	while (stack)
 	{
 		if (stack->pos <= middle)
