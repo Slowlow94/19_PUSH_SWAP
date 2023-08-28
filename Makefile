@@ -22,7 +22,7 @@ SRCS	= main.c \
 
 OBJS	= ${SRCS:.c=.o}
 INCS	= -IINCS
-CC		= gcc -fsanitize=address
+CC		= gcc
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
 

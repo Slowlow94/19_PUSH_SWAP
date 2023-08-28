@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 12:52:30 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/28 13:55:30 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ int	fill_linkchain(t_list **head_a, char **argv, int i)
 	else
 	{
 		new_node = ft_lc_new(cnt);
+		if (new_node == NULL)
+		{
+			ft_lc_clear(head_a);
+			return (1);
+		}
 		ft_lc_add_back(head_a, new_node);
 	}
 	return (0);
