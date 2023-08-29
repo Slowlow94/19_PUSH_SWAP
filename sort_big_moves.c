@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:59:33 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 10:15:09 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/29 14:52:30 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,11 @@ void	low_am_target_below(t_list **head_a, t_list **head_b, t_list *lowcost)
 	while (lowcost->target->pos > 0)
 	{
 		bottom_to_top_a(head_a);
-		if (lowcost->target == ft_lc_last(*head_a, 0))
-		{
-			give_position(head_a, head_b);
-			break ;
-		}
+		// if (lowcost->target == ft_lc_last(*head_a, 0))
+		// {
+		// 	give_position(head_a, head_b);
+		// 	break ;
+		// }
 		give_position(head_a, head_b);
 	}
 }

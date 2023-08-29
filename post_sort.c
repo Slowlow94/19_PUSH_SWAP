@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:53:10 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 13:21:16 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/29 15:03:34 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ void	sort_opti(t_list **move_list)
 	{
 		if ((move->ope == 1 && move->next->ope == 2)
 			|| (move->ope == 2 && move->next->ope == 1))
-			replace_move(move_list, move->pos, ss);
+			replace_move(&move, move->pos, ss);
 		if ((move->ope == 4 && move->next->ope == 5)
 			|| (move->ope == 5 && move->next->ope == 4))
-			replace_move(move_list, move->pos, rr);
+			replace_move(&move, move->pos, rr);
 		if ((move->ope == 7 && move->next->ope == 8)
 			|| (move->ope == 8 && move->next->ope == 7))
-			replace_move(move_list, move->pos, rrr);
+			replace_move(&move, move->pos, rrr);
 		move = move->next;
 	}
 }
