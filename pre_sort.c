@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:26:06 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/29 12:52:42 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/29 16:26:20 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ void	pre_sort_100(t_list **head_a, t_list **head_b)
 	int		cur_threshold;
 
 	cur_threshold = 0;
-	chunk = ft_lc_size(*head_a) / 3;
-	thresholds[0] = chunk;
-	thresholds[1] = chunk * 2;
-	thresholds[2] = (chunk * 3) - 3;
+	chunk = (ft_lc_size(*head_a) / 3);
+	thresholds[0] = chunk - 1;
+	thresholds[1] = (chunk * 2) -1;
+	thresholds[2] = (chunk * 3) - 1;
 	i = 0;
 	while (cur_threshold <= 2)
 	{
@@ -43,7 +43,7 @@ void	pre_sort_100(t_list **head_a, t_list **head_b)
 			if ((*head_a)->new_val <= thresholds[cur_threshold])
 			{
 				top_a_to_top_b(head_a, head_b);
-				maybe_ss(head_a, head_b);
+				// maybe_ss(head_a, head_b);
 				i++;
 			}
 			else
@@ -62,10 +62,10 @@ void	pre_sort_500(t_list **head_a, t_list **head_b)
 
 	cur_threshold = 0;
 	chunk = ft_lc_size(*head_a) / 4;
-	thresholds[0] = chunk;
-	thresholds[1] = chunk * 2;
-	thresholds[2] = chunk * 3;
-	thresholds[3] = (chunk * 4) - 3;
+	thresholds[0] = chunk -1;
+	thresholds[1] = (chunk * 2) -1;
+	thresholds[2] = (chunk * 3) - 1;
+	thresholds[3] = (chunk * 4) -1;
 	i = 0;
 	while (cur_threshold <= 3)
 	{
@@ -74,7 +74,7 @@ void	pre_sort_500(t_list **head_a, t_list **head_b)
 			if ((*head_a)->new_val <= thresholds[cur_threshold])
 			{
 				top_a_to_top_b(head_a, head_b);
-				maybe_ss(head_a, head_b);
+				// maybe_ss(head_a, head_b);
 				i++;
 			}
 			else
@@ -95,7 +95,7 @@ void	maybe_ss(t_list **head_a, t_list **head_b)
 	a = *head_a;
 	b = NULL;
 	b = *head_b;
-	if (a->new_val > a->next->new_val && b->new_val > b->next->new_val)
+	if (a->new_val > a->next->new_val && b->new_val < b->next->new_val)
 		swap_both(head_a, head_b);
 }
 

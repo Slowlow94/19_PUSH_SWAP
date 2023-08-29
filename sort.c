@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:43:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 13:20:37 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/29 16:15:22 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	wich_sort(t_list **head_a, t_list **head_b)
 		sort_5(head_a, head_b);
 	else
 		sort_big(head_a, head_b);
-	sort_opti(get_moves_list());
-	print_action_list(get_moves_list());
+	// sort_opti(get_moves_list());
+	// print_action_list(get_moves_list());
 }
 
 void	sort_3(t_list **head_a)

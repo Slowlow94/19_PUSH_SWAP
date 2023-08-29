@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -68,13 +69,9 @@ void	sort_opti(t_list **move_list)
 
 void	replace_move(t_list **move_list, int pos, t_op ope)
 {
-	t_list	*move;
-
-	move = NULL;
-	move = *move_list;
-	while (move && move->pos != pos)
-		move = move->next;
-	move->ope = ope;
-	deleteone(&(move->next));
+	while (*move_list && (*move_list)->pos != pos)
+		*move_list = (*move_list)->next;
+	(*move_list)->ope = ope;
+	deleteone(&((*move_list)->next));
 	give_position_opti(move_list);
 }
