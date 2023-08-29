@@ -24,8 +24,8 @@ int	ft_print_stack_a(t_list **head_a)
 	while (first)
 	{
 		ft_printf("Position %d : [%d]\n", i, (first)->c);
-		if (first->target)
-			ft_printf("target_node de [%d] : %d\n", first->c, first->target->c);
+		// if (first->target)
+		// 	ft_printf("target_node de [%d] : %d\n", first->c, first->target->c);
 		first = first->next;
 		i++;
 	}
