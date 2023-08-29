@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 15:26:06 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/28 12:42:57 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/29 12:52:42 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,55 +27,61 @@ void	pre_sort_100(t_list **head_a, t_list **head_b)
 {
 	int		i;
 	int		chunk;
-	int		cur_threshold;
 	int		thresholds[3];
+	int		cur_threshold;
 
+	cur_threshold = 0;
 	chunk = ft_lc_size(*head_a) / 3;
 	thresholds[0] = chunk;
 	thresholds[1] = chunk * 2;
 	thresholds[2] = (chunk * 3) - 3;
-	cur_threshold = 0;
 	i = 0;
-	while (head_a && cur_threshold < 3 && i < ((cur_threshold + 1) * chunk))
+	while (cur_threshold <= 2)
 	{
-		if ((*head_a)->new_val <= thresholds[cur_threshold])
+		while (head_a && i <= thresholds[cur_threshold])
 		{
-			top_a_to_top_b(head_a, head_b);
-			maybe_ss(head_a, head_b);
-			i++;
+			if ((*head_a)->new_val <= thresholds[cur_threshold])
+			{
+				top_a_to_top_b(head_a, head_b);
+				maybe_ss(head_a, head_b);
+				i++;
+			}
+			else
+				top_to_bottom_a(head_a);
 		}
-		else
-			top_to_bottom_a(head_a);
+		cur_threshold++;
 	}
-	cur_threshold++;
 }
 
 void	pre_sort_500(t_list **head_a, t_list **head_b)
 {
 	int		thresholds[4];
 	int		chunk;
-	int		cur_threshold;
 	int		i;
+	int		cur_threshold;
 
+	cur_threshold = 0;
 	chunk = ft_lc_size(*head_a) / 4;
 	thresholds[0] = chunk;
 	thresholds[1] = chunk * 2;
 	thresholds[2] = chunk * 3;
 	thresholds[3] = (chunk * 4) - 3;
-	cur_threshold = 0;
 	i = 0;
-	while (head_a && cur_threshold < 4 && i < ((cur_threshold + 1) * chunk))
+	while (cur_threshold <= 3)
 	{
-		if ((*head_a)->new_val <= thresholds[cur_threshold])
+		while (head_a && i <= thresholds[cur_threshold])
 		{
-			top_a_to_top_b(head_a, head_b);
-			maybe_ss(head_a, head_b);
-			i++;
+			if ((*head_a)->new_val <= thresholds[cur_threshold])
+			{
+				top_a_to_top_b(head_a, head_b);
+				maybe_ss(head_a, head_b);
+				i++;
+			}
+			else
+				top_to_bottom_a(head_a);
 		}
-		else
-			top_to_bottom_a(head_a);
+		cur_threshold++;
 	}
-	cur_threshold++;
 }
 
 void	maybe_ss(t_list **head_a, t_list **head_b)

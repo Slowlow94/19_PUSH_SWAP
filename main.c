@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:23:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 19:37:42 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/29 13:54:50 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int	main(int argc, char **argv)
 	// ft_printf("-----------------------\n");
 	// ft_printf("Stack B\n\n\n");
 	// ft_print_stack_a(&head_b);
-	// ft_lc_clear(&head_a);
-	// ft_lc_clear(&head_b);
+	ft_lc_clear(&head_a);
+	ft_lc_clear(&head_b);
 	// system("leaks push_swap");
 	return (0);
 }
