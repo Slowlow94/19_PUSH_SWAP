@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/28 17:10:39 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/30 13:11:13 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ t_list	*ft_lc_last(t_list *lst, int i);
 // ACTIONS SORT // 
 void	swap_a(t_list **head);
 void	swap_b(t_list **head);
-void	swap_both(t_list **head_a, t_list **head_b);
 void	bottom_to_top_a(t_list **head);
 void	bottom_to_top_b(t_list **head);
 void	bottom_to_top_both(t_list **head_a, t_list **head_b);
@@ -114,7 +113,6 @@ void	set_smallest(t_list **head_a);
 void	set_new_val_done(t_list **head_a);
 void	pre_sort_100(t_list **head_a, t_list **head_b);
 void	pre_sort_500(t_list **head_a, t_list **head_b);
-void	maybe_ss(t_list **head_a, t_list **head_b);
 
 // POST_SORT // 
 void	stock_actions(t_op ope);
@@ -125,5 +123,6 @@ void	print_action_list(t_list **move_list);
 void	init_moves_list(t_op ope);
 t_list	**get_moves_list(void);
 
-int	ft_print_stack_a(t_list **head_a); // !!!!!!!!!!!!!!!!!
+int		ft_print_stack_a(t_list **head_a); // !!!!!!!!!!!!!!!!!
+
 #endif

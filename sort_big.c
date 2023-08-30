@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:31:18 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/29 17:38:13 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/30 13:00:37 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@ void	sort_big(t_list **head_a, t_list **head_b)
 	{
 		setting_nodes(head_a, head_b);
 		move_nodes(head_a, head_b);
-		// ft_printf("Stack A\n\n\n");
-		// ft_print_stack_a(head_a);
-		// ft_printf("-----------------------\n");
-		// ft_printf("Stack B\n\n\n");
-		// ft_print_stack_a(head_b);
 	}
 	put_stack_in_order(head_a, return_min(head_a), 'a');
 }

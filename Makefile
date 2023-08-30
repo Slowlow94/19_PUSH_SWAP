@@ -8,7 +8,6 @@ SRCS	= main.c \
 		  ft_printf_utils.c \
 		  actions.c \
 		  actions_2.c \
-		  actions_both.c \
 		  sort.c \
 		  sort_big.c \
 		  sort_big_moves.c \

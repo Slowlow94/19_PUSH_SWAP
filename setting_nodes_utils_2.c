@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 12:52:34 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/30 10:15:27 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/30 13:01:37 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	find_target_node(t_list **head_a, t_list **head_b)
 	int		biggest_value;
 
 	b = *head_b;
-	biggest_value = INT_MAX;
 	while (b)
 	{
 		a = *head_a;
+		biggest_value = INT_MAX;
 		while (a)
 		{
 			if ((a->c > b->c) && a->c < biggest_value)
