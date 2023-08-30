@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/30 13:14:50 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/30 15:48:17 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ int	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
 {
 	int	i;
 
+	i = 1;
 	if (argc <= 2)
 	{
-		if (argv[1] && (is_num(argv[1]) == 0))
+		if (argv[i] && (is_num(argv[i]) == 0))
+			return (ft_error());
+		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
 			return (ft_error());
 		else
 			return (1);
 	}
-	i = 1;
 	while (argv[i])
 	{
 		if (!is_num(argv[i]))
