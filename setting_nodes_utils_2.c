@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   setting_nodes_utils_2.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Sarah <Sarah@student.42.fr>                +#+  +:+       +#+        */
+/*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 12:52:34 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/24 12:54:47 by Sarah            ###   ########.fr       */
+/*   Updated: 2023/08/30 10:15:27 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	find_target_node(t_list **head_a, t_list **head_b)
 	int		biggest_value;
 
 	b = *head_b;
+	biggest_value = INT_MAX;
 	while (b)
 	{
-		biggest_value = INT_MAX;
 		a = *head_a;
 		while (a)
 		{
