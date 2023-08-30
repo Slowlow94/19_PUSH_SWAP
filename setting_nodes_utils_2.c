@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 12:52:34 by Sarah             #+#    #+#             */
-/*   Updated: 2023/08/30 15:59:31 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/30 16:53:15 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	find_target_node(t_list **head_a, t_list **head_b)
 	t_list	*target_node;
 	t_list	*a;
 	t_list	*b;
-	long		biggest_value;
+	long	biggest_value;
 
 	b = *head_b;
 	while (b)

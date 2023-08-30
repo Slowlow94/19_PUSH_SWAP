@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:50:15 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/30 14:37:40 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/30 16:43:59 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ int	is_num(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] && (str[i] == '+' || str[i] == '-'))
+		if (str[i] && str[i] == '+')
+			return (0);
+		if (str[i] && str[i] == '-')
 			i++;
+		if (str[i] && (str[i] == '0' && str[i++] == '\0'))
+			i++;
+		if (str[i] && (str[i] == '0' && str[i++] == '0'))
+			return (0);
 		while (str[i] && str[i] >= '0' && str[i] <= '9')
 			i++;
 		if (str[i] && (str[i] < '0' || str[i] > '9'))
