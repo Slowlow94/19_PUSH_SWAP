@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:23:08 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/30 16:53:56 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/31 14:01:10 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,11 @@ int	main(int argc, char **argv)
 
 	head_b = NULL;
 	head_a = NULL;
+	if (argc <= 1)
+		return (1);
 	if (parse_and_create_linkchain(&head_a, argc, argv) == 1)
 		return (1);
 	wich_sort(&head_a, &head_b);
-	// ft_printf("Stack A\n\n\n");
-	// ft_print_stack_a(&head_a);
-	// ft_printf("-----------------------\n");
-	// ft_printf("Stack B\n\n\n");
-	// ft_print_stack_a(&head_b);
-	// ft_lc_clear(&head_a);
-	// ft_lc_clear(&head_b);
+	ft_lc_clear(&head_a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 16:45:31 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/30 13:11:13 by salowie          ###   ########.fr       */
+/*   Updated: 2023/08/31 13:55:15 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int		parse_and_create_linkchain(t_list **head_a, int argc, char **argv);
 int		fill_linkchain(t_list **head_a, char **argv, int i);
 int		is_num(char *str);
 int		is_dubble(t_list **head_A, int value);
+int		is_in_order(t_list **head_a);
 long	ft_atoi(const char *str);
 
 // ERRORS //
@@ -122,7 +123,5 @@ void	give_position_opti(t_list **head);
 void	print_action_list(t_list **move_list);
 void	init_moves_list(t_op ope);
 t_list	**get_moves_list(void);
-
-int		ft_print_stack_a(t_list **head_a); // !!!!!!!!!!!!!!!!!
 
 #endif

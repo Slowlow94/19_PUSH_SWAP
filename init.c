@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: salowie <salowie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 17:23:38 by salowie           #+#    #+#             */
-/*   Updated: 2023/08/30 15:48:17 by salowie          ###   ########.fr       */
+/*   Created: 2023/08/31 13:27:07 by salowie           #+#    #+#             */
+/*   Updated: 2023/08/31 14:17:58 by salowie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,26 @@ int	ft_error(void)
 	return (1);
 }
 
+int	is_in_order(t_list **head_a)
+{
+	t_list	*check;
+
+	check = *head_a;
+	while (check && check->next)
+	{
+		if (check->c > check->next->c)
+			return (0);
+		check = check->next;
+	}
+	return (1);
+}
+
 int	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
 {
 	int	i;
 
 	i = 1;
-	if (argc <= 2)
-	{
-		if (argv[i] && (is_num(argv[i]) == 0))
-			return (ft_error());
-		if (ft_atoi(argv[i]) < INT_MIN || ft_atoi(argv[i]) > INT_MAX)
-			return (ft_error());
-		else
-			return (1);
-	}
-	while (argv[i])
+	while (argv[i] && argc > 1)
 	{
 		if (!is_num(argv[i]))
 			return (ft_error());
@@ -43,6 +48,8 @@ int	parse_and_create_linkchain(t_list **head_a, int argc, char **argv)
 			return (ft_error());
 		i++;
 	}
+	if (is_in_order(head_a) == 1)
+		return (1);
 	return (0);
 }
 

@@ -16,7 +16,7 @@ SRCS	= main.c \
 		  post_sort.c \
 		  post_sort_2.c \
 		  pre_sort.c \
-		  pre_sort_2.c \
+		  pre_sort_2.c	\
 		  printf_stack_a.c
 
 OBJS	= ${SRCS:.c=.o}
